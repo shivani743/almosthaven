@@ -1,0 +1,611 @@
+<!-- Main Header-1 Start -->
+<header class="main-header">
+    <div class="header-fix-wrap header-1 is-sticky">
+        <div class="container-fluid rel-div">
+            <div class="logo">
+                <a href="index.html"> <img alt="" src="assets/images/logo/logo-1.png" /> </a>
+                <span>TRAVEL AGENCY</span>
+            </div>
+            <div class="responsive-toggle fa fa-bars"> </div>
+
+            <!-- Main Header Start -->
+            <div class="menu-bar">
+                <div class="responsive-toggle fa fa-bars"> </div>
+                <nav id="primary-navigation">
+                    <ul class="primary-navbar">
+                        <li class="dropdown">
+                            <div class="has-search">
+                                <span class="fa fa-search form-control-feedback"></span>
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true"><i class="far fa-question-circle"></i> </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="portfolio-col-four.html">FAQ </a></li>
+                                <li><a href="portfolio-col-three.html"> Give Feedback</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" data-toggle="modal" data-target="#exampleModalCenter">Log In</a></li>
+                        <li style="padding: 0px 0px 0px 42px!important;">
+                            <a href="" type="button" class="btn btn-primary">Start Planning</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- / Main Header Ends -->
+        </div>
+    </div>
+</header>
+<!-- / Main Header-1 Ends -->
+
+
+
+<!-- Main-Slider-1 Start -->
+<div class="main-slider-1">
+    <div class="main-slider owl-carousel dots-1" id="slider-main">
+        <div class="item">
+            <img alt="" src="assets/images/sliders/slider.jpg" />
+        </div>
+        <div class="item">
+            <img alt="" src="assets/images/sliders/slider1.jpg" />
+        </div>
+        <div class="item">
+            <img alt="" src="assets/images/sliders/slider2.jpg" />
+        </div>
+    </div>
+    <div class="container">
+        <div class="block-box">
+            <ul class="search-tabs">
+                <li class="active">
+                    <img src="assets/images/icons/icon-1.png" alt="" />
+                    <a href="#search-1" data-toggle="tab">
+                        Trip Plan <span class="fsz-13">Search here Trip your plan</span>
+                    </a>
+                    <i class="fas fa-plane-departure icon theme-color-bg"></i>
+                    <h3 class="text-white">The new way to plan your next trip</h3>
+                    <p class="text-white">Create a fully customized
+                        day by day itinerary for free</p>
+                    <img src="assets/images/sliders/tour.png" alt="" class="tour-img" />
+
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="search-1">
+                    <div class="search-wrap">
+                        <form role="form" class="search-form" method="post">
+                            <div class="row">
+                                <div class="form-group col-sm-12">
+                                    <input name="destination" [(ngModel)]="destination" (ngModelChange)="change()" placeholder="Destinations or hotel name..."
+                                        class="form-control name input-your-name">
+                                    <!-- {{ formattedaddress }} -->
+                                    <div *ngFor ="let address of addresses" class="address-list">
+                                        <div class="address-item">
+                                            <div class="address-item-inner">
+                                                <div class="address-item-content">
+                                                    <h4 class="address-item-title">{{ address.description }}</h4>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    <span class="fa fa-question-circle theme-color"></span>
+
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Enter a date range</mat-label>
+                                        <mat-date-range-input [rangePicker]="picker">
+                                          <input matStartDate placeholder="Start date">
+                                          <input matEndDate placeholder="End date">
+                                        </mat-date-range-input>
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-date-range-picker #picker></mat-date-range-picker>
+                                      </mat-form-field>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <button (click)="getPlan()" class="theme-btn" data-width="100%" type="submit"> SEARCH
+                                        NOW </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- / Main-Slider-1 Ends -->
+
+<section class="pt-50 agency">
+    <div class="container">
+        <div class="title-wrap-2 text-center">
+            <h2> <strong>Easy to use, easy to browse</strong></h2>
+        </div>
+        <div class="row">
+            <img src="assets/images/icons/trip-icon.png">
+            <div class="col-md-3">
+                <div class="wrap">
+                    <div class="info">
+                        <h2 class="title-4">Get a personalized trip</h2>
+                        <p class="title-p">A complete day by day itinerary based on your preferences</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="wrap">
+                    <div class="info">
+                        <h2 class="title-4">Customize it</h2>
+                        <p class="title-p">Refine your trip. We'll find the
+                            best routes and schedules</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="wrap">
+                    <div class="info">
+                        <h2 class="title-4">Book it</h2>
+                        <p class="title-p">Choose from the best hotels and activities. Up to 50% off.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="wrap">
+                    <div class="info">
+                        <h2 class="title-4"> Manage it</h2>
+                        <p class="title-p">Everything in one place. Everyone on the same page.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Travellers Choice Start -->
+<section class="sec-space travellers-choice">
+    <div class="container">
+        <h3><strong> Travelers’ Choice Award Winners.</strong> </h3>
+        <div class="row">
+            <div class="grid-sizer"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="meso-wrap white-color">
+                        <div class="feature-2 flex-item">
+                            <img src="assets/images/tour/1.jpg" alt="">
+                            <div class="price-2">
+                                <h2 class="title-3 no-margin"> <a href=""> NUNGWI BEACH </a> </h2>
+                                <span class="fsz-13">Tasmania</span>
+                            </div>
+                            <div class="flex-wrap">
+                                <div class="flex-caption middle info transition">
+                                    <div class="price">
+                                        <h2 class="title-3 no-margin"> <a href=""> DOWNTOWN </a> </h2>
+                                        <span class="fsz-13">Sydney Australia</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet consectuerer delgado adipiscing diam dolorado the best
+                                        place.</p>
+                                </div>
+                            </div>
+                            <a href="#" class="title-1 rotated-text"> <span> SHARE THIS PLACE </span> </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="meso-wrap white-color">
+                        <div class="feature-2 flex-item">
+                            <img src="assets/images/tour/2.jpg" alt="">
+                            <div class="price-2">
+                                <h2 class="title-3 no-margin"> <a href=""> NUNGWI BEACH </a> </h2>
+                                <span class="fsz-13">Tasmania</span>
+                            </div>
+                            <div class="flex-wrap">
+                                <div class="flex-caption middle info transition">
+                                    <div class="price">
+                                        <h2 class="title-3 no-margin"> <a href=""> DOWNTOWN </a> </h2>
+                                        <span class="fsz-13">Sydney Australia</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet consectuerer delgado adipiscing diam dolorado the best
+                                        place.</p>
+                                </div>
+                            </div>
+                            <a href="#" class="title-1 rotated-text"> <span> SHARE THIS PLACE </span> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="meso-wrap white-color">
+                        <div class="feature-2 flex-item">
+                            <img src="assets/images/tour/3.jpg" alt="">
+                            <div class="price-2">
+                                <h2 class="title-3 no-margin"> <a href=""> NUNGWI BEACH </a> </h2>
+                                <span class="fsz-13">Tasmania</span>
+                            </div>
+                            <div class="flex-wrap">
+                                <div class="flex-caption middle info transition">
+                                    <div class="price">
+                                        <h2 class="title-3 no-margin"> <a href=""> DOWNTOWN </a> </h2>
+                                        <span class="fsz-13">Sydney Australia</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet consectuerer delgado adipiscing diam dolorado the best
+                                        place.</p>
+                                </div>
+                            </div>
+                            <a href="#" class="title-1 rotated-text"> <span> SHARE THIS PLACE </span> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="meso-wrap white-color">
+                        <div class="feature-2 flex-item">
+                            <img src="assets/images/tour/4.jpg" alt="">
+                            <div class="price-2">
+                                <h2 class="title-3 no-margin"> <a href=""> NUNGWI BEACH </a> </h2>
+                                <span class="fsz-13">Tasmania</span>
+                            </div>
+                            <div class="flex-wrap">
+                                <div class="flex-caption middle info transition">
+                                    <div class="price">
+                                        <h2 class="title-3 no-margin"> <a href=""> DOWNTOWN </a> </h2>
+                                        <span class="fsz-13">Sydney Australia</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet consectuerer delgado adipiscing diam dolorado the best
+                                        place.</p>
+                                </div>
+                            </div>
+                            <a href="#" class="title-1 rotated-text"> <span> SHARE THIS PLACE </span> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="meso-wrap white-color">
+                        <div class="feature-2 flex-item">
+                            <img src="assets/images/tour/7.jpg" alt="">
+                            <div class="price-2">
+                                <h2 class="title-3 no-margin"> <a href=""> NUNGWI BEACH </a> </h2>
+                                <span class="fsz-13">Tasmania</span>
+                            </div>
+                            <div class="flex-wrap">
+                                <div class="flex-caption middle info transition">
+                                    <div class="price">
+                                        <h2 class="title-3 no-margin"> <a href=""> DOWNTOWN </a> </h2>
+                                        <span class="fsz-13">Sydney Australia</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet consectuerer delgado adipiscing diam dolorado the best
+                                        place.</p>
+                                </div>
+                            </div>
+                            <a href="#" class="title-1 rotated-text"> <span> SHARE THIS PLACE </span> </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="meso-wrap white-color">
+                        <div class="feature-2 flex-item">
+                            <img src="assets/images/tour/6.jpg" alt="">
+                            <div class="price-2">
+                                <h2 class="title-3 no-margin"> <a href=""> NUNGWI BEACH </a> </h2>
+                                <span class="fsz-13">Tasmania</span>
+                            </div>
+                            <div class="flex-wrap">
+                                <div class="flex-caption middle info transition">
+                                    <div class="price">
+                                        <h2 class="title-3 no-margin"> <a href=""> DOWNTOWN </a> </h2>
+                                        <span class="fsz-13">Sydney Australia</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet consectuerer delgado adipiscing diam dolorado the best
+                                        place.</p>
+                                </div>
+                            </div>
+                            <a href="#" class="title-1 rotated-text"> <span> SHARE THIS PLACE </span> </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="meso-wrap white-color">
+                        <div class="feature-2 flex-item">
+                            <img src="assets/images/tour/8.jpg" alt="">
+                            <div class="price-2">
+                                <h2 class="title-3 no-margin"> <a href=""> NUNGWI BEACH </a> </h2>
+                                <span class="fsz-13">Tasmania</span>
+                            </div>
+                            <div class="flex-wrap">
+                                <div class="flex-caption middle info transition">
+                                    <div class="price">
+                                        <h2 class="title-3 no-margin"> <a href=""> DOWNTOWN </a> </h2>
+                                        <span class="fsz-13">Sydney Australia</span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet consectuerer delgado adipiscing diam dolorado the best
+                                        place.</p>
+                                </div>
+                            </div>
+                            <a href="#" class="title-1 rotated-text"> <span> SHARE THIS PLACE </span> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- / Travellers Choice Ends -->
+
+<!-- Detail Tabs Start -->
+<section class="detail-tabs pt-50">
+    <div class="container" id="tab-container">
+        <ul class="list-inline">
+            <li class="active"> <a href="#section-1" role="tab" data-toggle="tab"><img src="assets/images/icons/research.png" style="height: 50px;">&nbsp;&nbsp;Research Trip</a> </li>
+            <li> <a href="#section-2" role="tab" data-toggle="tab"><img src="assets/images/icons/trip-plan.png" style="height: 50px;">&nbsp;&nbsp;Trip Planning </a> </li>
+            <li> <a href="#section-3" role="tab" data-toggle="tab"><img src="assets/images/icons/complete-trip.png"style="height: 50px;">&nbsp;&nbsp;Complete You Trip </a> </li>
+        </ul>
+    </div>
+</section>
+<!-- / Detail Tabs Ends -->
+<div>
+    <div class="tab-content">
+        <!-- Overview Start -->
+        <section id="section-1" class="sec-space overview tab-pane in active">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="info">
+                            <div class="col-md-12">
+                                <span class="num one">1</span>
+                            </div>
+                            <h1 class=" pb-10">Research bot that works for youdvdf</h1>
+                            <p class="fsz-16">Lorem Ipsum is simply dummy text of It was popularised in the 1960s with
+                                the
+                                release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                desktop
+                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.:</p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6" align="center">
+                        <div class="img">
+                            <div class="text-center">
+
+                                <img alt="" src="assets/images/sliders/reserach.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- / Overview Ends -->
+
+        <!-- Hotels and Rooms Start -->
+        <section id="section-2" class="sec-space tab-pane">
+            <div class="container">
+                <div class="col-md-6">
+                    <div class="info">
+                        <h2 class=" pb-10"> Planning engine that helps you see & do more </h2>
+                        <p class="fsz-16">Know better, book better and go better on the world’s largest travel site.
+                            Browse
+                            over 350 million candid reviews, opinions, and photos of hotels, restaurants, attractions,
+                            and
+                            more - all by travelers like you. </p>
+                    </div>
+                </div>
+                <div class="col-md-6" align="center">
+                    <div class="img">
+                        <img alt="" src="assets/images/gallery/370x470-1.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- / Hotels and Rooms Ends -->
+
+        <!-- Hotels Review Start -->
+        <section id="section-3" class="sec-space tab-pane">
+            <div class="container">
+                <div class="col-md-6">
+                    <div class="info">
+                        <h2 class=" pb-10"> Your complete trip in one place </h2>
+                        <p class="fsz-16">Know better, book better and go better on the world’s largest travel site.
+                            Browse
+                            over 350 million candid reviews, opinions, and photos of hotels, restaurants, attractions,
+                            and
+                            more - all by travelers like you. </p>
+                    </div>
+                </div>
+                <div class="col-md-6" align="center">
+                    <div class="img">
+                        <img alt="" src="assets/images/gallery/370x470-1.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- / Hotels Review Ends -->
+        <div class="text-center pb-50">
+            <button class="theme-btn btn-2" type="submit" align="center"> Start Planning </button>
+        </div>
+    </div>
+</div>
+
+<!-- Ideal Trip Start -->
+<section class="sec-space ideal-trip" style="background-image: url('assets/images/sliders/bg-img.jpg')!important;">
+    <div class="container">
+        <div class="title-wrap-2 wave-line-2 text-center">
+            <!-- <img alt="" src="assets/images/icons/logo-icon.png" /> -->
+            <h2 class="section-title white-color pt-10"> Find & book your ideal trip. </h2>
+            <p> Up to 30% off with Vetrov Insider Deals! </p>
+        </div>
+        <!-- <img class="txt-img" alt="" src="assets/images/icons/text-2.png" /> -->
+        <div class="row">
+            <div class="col-md-3 col-sm-6 pb-50">
+                <div class="info">
+                    <img alt="" src="assets/images/icons/icon-6.png" />
+                    <h2 class="title-2 white-color pt-10">1.245+ <span class="fsz-18"> Destinations </span> </h2>
+                    <p>A touch paradise in paradise, lorem ipsum dolor sit amet</p>
+                </div>
+                <a href="#" class="all-show white-color">View all locations</a>
+            </div>
+            <div class="col-md-3 col-sm-6 pb-50">
+                <div class="info">
+                    <img alt="" src="assets/images/icons/icon-7.png" />
+                    <h2 class="title-2 white-color pt-10">2.320+ <span class="fsz-18"> Hotels </span> </h2>
+                    <p>The best hotel from 1 ~ 5 stars hotels around the world</p>
+                </div>
+                <a href="#" class="all-show white-color">View all hotels</a>
+            </div>
+            <div class="col-md-3 col-sm-6 pb-50">
+                <div class="info">
+                    <img alt="" src="assets/images/icons/icon-8.png" />
+                    <h2 class="title-2 white-color pt-10">450+ <span class="fsz-18"> Flights </span> </h2>
+                    <p>The lorem dolarado sit amet cheap flight up to 2.340 locations</p>
+                </div>
+                <a href="#" class="all-show white-color">View all flights</a>
+            </div>
+            <div class="col-md-3 col-sm-6 pb-50">
+                <div class="info">
+                    <p> <img alt="" src="assets/images/icons/icon-9.png" /> <span> Tips for your next vacations </span>
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                        dolore magna volutpat. </p>
+                </div>
+                <a href="#" class="all-show white-color">Read more</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Ideal Trip Ends -->
+
+
+<!-- Patners Start -->
+<section class="sec-space-bottom pt-50 patners">
+    <div class="container">
+        <h3 align="center"><strong>Inspirock Trip Planner in the News</strong></h3>
+        <div class="patners-wrap">
+            <div class="owl-carousel patners-slider nav-2">
+                <div class="item">
+                    <a href="#"> <img src="assets/images/icons/partner-1.png " alt="" /> </a>
+                </div>
+                <div class="item">
+                    <a href="#"> <img src="assets/images/icons/partner-2.png " alt="" /> </a>
+                </div>
+                <div class="item">
+                    <a href="#"> <img src="assets/images/icons/partner-3.png " alt="" /> </a>
+                </div>
+                <div class="item">
+                    <a href="#"> <img src="assets/images/icons/partner-1.png " alt="" /> </a>
+                </div>
+                <div class="item">
+                    <a href="#"> <img src="assets/images/icons/partner-2.png " alt="" /> </a>
+                </div>
+                <div class="item">
+                    <a href="#"> <img src="assets/images/icons/partner-3.png " alt="" /> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Patners Ends -->
+
+<!-- Popular Destination Start -->
+<section class="sec-space popular-destination white-color"
+    style=" background-image: url(assets/images/sliders/footer-bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="title-wrap-2 left">
+                    <h4 class="white-color">Quick Links of Inspirock </h4>
+                </div>
+            </div>
+            <div class="col-sm-6 right">
+                <ul class="list-items social-icons-1">
+                    <li> <a href="#" class="fab fa-facebook"></a> </li>
+                    <li> <a href="#" class="fab fa-twitter"></a> </li>
+                    <li> <a href="#" class="fab fa-instagram"></a> </li>
+                    <li> <a href="#" class="fab fa-youtube"></a> </li>
+                    <li> <a href="#" class="fab fa-google-plus-square"></a> </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content feature-1">
+            <div role="tabpanel" class="tab-pane fade in active" id="popular-1">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="hotels-list">
+
+                            <ul class="list-unstyled">
+                                <li> <a href="#">About us</a> </li>
+                                <li> <a href="#">Partner with us</a> </li>
+                                <li> <a href="#">Inspirock on LinkedIn</a> </li>
+                                <li>Videos</li>
+                                <li>Career</li>
+                            </ul>
+                            <h2 class="title-1 rotated-text"> <span class=""> INSPIROCK</span> </h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="hotels-list">
+                            <ul class="list-unstyled">
+                                <li> <a href="#">Trips by other users</a> </li>
+                                <li> <a href="#">Destinations</a> </li>
+                                <li> <a href="#">Credits</a> </li>
+                            </ul>
+                            <h2 class="title-1 rotated-text"> <span class="">BROWSE </span> </h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="hotels-list">
+                            <ul class="list-unstyled">
+                                <li> <a href="#">FAQ</a> </li>
+                                <li> <a href="#">Contact us</a> </li>
+                                <li> <a href="#">Privacy policy</a> </li>
+                                <li> <a href="#">Cookie policy</a> </li>
+                                <li> <a href="#">Copyright policy</a> </li>
+                                <li> <a href="#">Terms of use</a> </li>
+                            </ul>
+                            <h2 class="title-1 rotated-text"> <span class="">HELP </span> </h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="hotels-list">
+                            <ul class="list-unstyled">
+                                <li> <a href="#">Currency: Indian Rupee</a><br>
+                                    <a href="">Change</a>
+                                </li>
+                                <li> <a href="#">Language: English</a><br>
+                                    <a href="">Change</a>
+                                </li>
+                                <li>Visit our blogs</li>
+                            </ul>
+                            <h2 class="title-1 rotated-text"> <span class="">SETTING </span> </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Popular Destination Ends -->
+<!-- FOOTER -->
+<footer class="page-footer">
+    <!-- Footer menu Start -->
+    <div class="text-center">
+        <div class="container footer-menu">
+            <ul class="primary-navbar">
+                <li><a href="#">© 2022 Inspirock ® - All rights reserved </a></li>
+                <li><a href="#">This product includes GeoLite2 data created by MaxMind, available from
+                        https://www.maxmind.com </a></li>
+                <li><a href="#"> Contains information from Openflights Route database, which is made available here
+                        under the Open Database License (ODbL) </a></li>
+                <li><a href="#">Powered By Google </a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- / Footer Menu Ends -->
+
+</footer>
+<!-- /FOOTER -->
