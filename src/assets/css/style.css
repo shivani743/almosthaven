@@ -7041,13 +7041,15 @@ ul.list-caret li:before, .search-form button.form-control:hover {
     position: absolute;
     z-index: 2;
     display: block;
-    width: 37px;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
+    width: 100%;
+    height: 2px;
+    line-height: 37px;
+    text-align: end;
     pointer-events: none;
     color: #bebebe;
-    margin-top: 8px;
+    margin-top: 1px;
+    padding: 0px 19px 2px 12px;
+    float: right;
 }
 
 .has-search .form-control {
