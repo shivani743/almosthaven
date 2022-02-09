@@ -12,8 +12,9 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { CoreModule } from './core/core.module';
 import { InterceptorService } from './core/services/http/interceptor.service';
 import { LocalStorageService } from './core/services/storage/local-storage.service';
-
 import { AgmCoreModule } from '@agm/core';
+
+
 
 
 @NgModule({
@@ -27,7 +28,6 @@ import { AgmCoreModule } from '@agm/core';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     })
-
   ],
 
 

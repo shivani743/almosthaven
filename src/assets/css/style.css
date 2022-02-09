@@ -8142,10 +8142,10 @@ a.waves-effect, a.waves-light {
 .map-card{
     background-color: #fff;
     z-index: 99;
-    bottom: 0;
+    bottom: 21px;
     position: absolute;
     box-shadow: 0px 4px 22px #0000004f;
-    left: 3%;
+    left: 2%;
     border-radius: 20px;
     padding: 20px 12px;
     
@@ -8234,4 +8234,19 @@ a.waves-effect, a.waves-light {
     width: 90%;
     margin: 0px auto;
     margin-top: 100px
+}
+
+.PlanNarrowNavSidebarItem__text {
+    color: #adadad;;
+    padding-bottom: 4px;
+}
+.PlanNarrowNavSidebarItem__dateLabelWord {
+    font-size: 11px;
+    line-height: 7px;
+}
+
+
+.flex-column-date{border: 1px solid #adadad;;
+    border-radius: 10px;
+    margin-top: 10px;
 }

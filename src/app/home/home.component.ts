@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import {ActivatedRoute,Router} from '@angular/router';
-import {ServerService} from '../services/server.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ServerService } from '../services/server.service';
 
 declare var google: any;
 @Component({
@@ -19,7 +19,10 @@ export class HomeComponent implements OnInit {
   endDate: any;
   resp: any;
   campaignOne!: FormGroup;
-datee:any;
+  datee: any;
+
+
+  
   constructor(private route: ActivatedRoute, private router: Router, private server: ServerService) {
     const today = new Date();
     const month = today.getMonth();
@@ -29,7 +32,7 @@ datee:any;
       end: new FormControl(''),
     });
 
-   }
+  }
   ngOnInit() {
     // this.searchh()
     console.log(this.campaignOne)

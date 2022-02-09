@@ -27,9 +27,9 @@
                                 <li><a href="portfolio-col-three.html"> Give Feedback</a></li>
                             </ul>
                         </li>
-                        <!-- <li><a href="#" data-toggle="modal" data-target="#exampleModalCenter">Log In</a></li> -->
-                        <li style="padding: 0px 0px 0px 42px!important;">
-                            <a href="" type="button" class="btn btn-primary">Start Planning</a>
+                        <li><a href="#" data-toggle="modal" data-target="#exampleModalCenter">Log In</a></li>
+                        <li style="padding: 0px 0px 0px 9px!important">
+                            <a href="" type="button" class="btn btn-primary">Sign Up</a>
                         </li>
                     </ul>
                 </nav>
@@ -76,34 +76,16 @@
                     <div class="search-wrap">
                         <form role="form" class="search-form" method="post">
                             <div class="row">
-                                <div class="form-group col-sm-12">
-                                    <!-- <input name="destination" [(ngModel)]="destination" (ngModelChange)="change()"
-                                        placeholder="Destinations or hotel name..."
-                                        class="form-control name input-your-name"> -->
-                                    <!-- {{ formattedaddress }} -->
-                                    <!-- <div *ngFor="let address of addresses" class="address-list">
-                                        <div class="address-item">
-                                            <div class="address-item-inner">
-                                                <div class="address-item-content">
-                                                    <h4 class="address-item-title">{{ address.description }}</h4>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
+                                <div class="form-group col-md-12">
                                     <mat-form-field class="example-full-width" appearance="fill">
-                                        <input matInput name="destination" [(ngModel)]="destination" (ngModelChange)="change()"
-                                        placeholder="Destinations or hotel name..."
-                                        class="form-control name input-your-name">
+                                        <input matInput type="text" name="destination" [(ngModel)]="destination" (ngModelChange)="change()" [matAutocomplete]="auto" placeholder="Where to? eg: London, Paris">
                                         <mat-autocomplete #auto="matAutocomplete" class="address-list">
-                                            <mat-option *ngFor="let address of addresses | async" [value]="address.place_id" (onSelect)="onSelectPlace(address)">
+                                            <mat-option *ngFor="let address of addresses" [value]="address.description" (onSelect)="onSelectPlace(address)">
                                                 {{ address.description }}
                                             </mat-option>
-
                                         </mat-autocomplete>
                                     </mat-form-field>
                                     <span class="fa fa-question-circle theme-color"></span>
-
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <mat-form-field appearance="fill">
@@ -499,7 +481,7 @@
 <!-- Patners Start -->
 <section class="sec-space-bottom pt-50 patners">
     <div class="container">
-        <h3 align="center"><strong>Inspirock Trip Planner in the News</strong></h3>
+        <h3 align="center"><strong>Almost Haven India Trip Planner in the News</strong></h3>
         <div class="patners-wrap">
             <div class="owl-carousel patners-slider nav-2">
                 <div class="item">
@@ -533,7 +515,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="title-wrap-2 left">
-                    <h4 class="white-color">Quick Links of Inspirock </h4>
+                    <h4 class="white-color">Quick Links of Almost Haven India </h4>
                 </div>
             </div>
             <div class="col-sm-6 right">
@@ -556,11 +538,11 @@
                             <ul class="list-unstyled">
                                 <li> <a href="#">About us</a> </li>
                                 <li> <a href="#">Partner with us</a> </li>
-                                <li> <a href="#">Inspirock on LinkedIn</a> </li>
+                                <li> <a href="#">Almost Haven India on LinkedIn</a> </li>
                                 <li>Videos</li>
                                 <li>Career</li>
                             </ul>
-                            <h2 class="title-1 rotated-text"> <span class=""> INSPIROCK</span> </h2>
+                            <h2 class="title-1 rotated-text"> <span class=""> Almost Haven India</span> </h2>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
@@ -606,13 +588,18 @@
     </div>
 </section>
 <!-- / Popular Destination Ends -->
+
+
+
+
+
 <!-- FOOTER -->
 <footer class="page-footer">
     <!-- Footer menu Start -->
     <div class="text-center">
         <div class="container footer-menu">
             <ul class="primary-navbar">
-                <li><a href="#">© 2022 Inspirock ® - All rights reserved </a></li>
+                <li><a href="#">© 2022 Almost Haven India ® - All rights reserved </a></li>
                 <li><a href="#">This product includes GeoLite2 data created by MaxMind, available from
                         https://www.maxmind.com </a></li>
                 <li><a href="#"> Contains information from Openflights Route database, which is made available here

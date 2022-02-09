@@ -6,41 +6,39 @@
 		<div class="row">
 			<div class="col-md-6 travel-card">
 				<div class="home_content">
-					<header class="top-bar">
-						<div class="block-box">
-							<div class="left">
-								<div class="top-nav">
-									<button type="submit" class="primary-btn-small theme-btn"> Signup to Save</button>
-								</div>
-								<div class="top-nav">
-									<button type="submit" class="secondary-btn-small"><i class="fas fa-share"></i>&nbsp;
-										Share here</button>
-								</div>
-							</div>
-							<div class="right">
-								<div class="top-nav">
-									<button type="submit" class="dark-btn-small"><i
-											class="fas fa-mobile-alt"></i>&nbsp;&nbsp;Get App</button>
-								</div>
-								<div class="top-nav">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light">
+						<button class="navbar-toggler" type="button" data-toggle="collapse"
+							data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+							aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item">
+									<button class="primary-btn-small theme-btn"> Signup to Save</button>
+								</li>
+								<li class="nav-item">
+									<button class="secondary-btn-small"><i class="fas fa-share"></i>&nbsp; Share</button>
+								</li>
+
+							</ul>
+							<div class="">
+								<div class="btn-group" role="group" aria-label="Basic example">
+									<button class="dark-btn-small"><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;Get App</button>
 									<div class="dropdown">
-										<button class="btn btn-light dropdown-toggle" type="button"
-											id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-											<i class="fas fa-ellipsis-h"></i>
-										</button>
+										<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></button>
 										<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-											<a class="dropdown-item" href="#"><i class="fas fa-cog"></i>&nbsp;Trip
-												Setting</a>
-											<a class="dropdown-item" href="#"><i
-													class="fas fa-question"></i>&nbsp;FAQ</a>
-											<a class="dropdown-item" href="#"><i class="fas fa-print"></i>&nbsp;Print
-												this Trip</a>
+											<a class="dropdown-item" href="#"><i class="fas fa-cog"></i>&nbsp;Trip Setting</a>
+											<a class="dropdown-item" href="#"><i class="fas fa-question"></i>&nbsp;FAQ</a>
+											<a class="dropdown-item" href="#"><i class="fas fa-print"></i>&nbsp;Print this Trip</a>
 										</div>
 									</div>
 								</div>
+
 							</div>
 						</div>
-					</header>
+					</nav>
 					<div class="sidebar">
 						<div class="logo_content">
 							<div class="logo">
@@ -54,64 +52,17 @@
 									<a class="navigation__link" href="#travel"><i class="far fa-calendar-alt"></i> </a>
 								</li>
 								<li>
-									<a class="navigation__link" href="#date-route">
-										<i class="fas fa-cloud-sun-rain"></i>
-										<span class="links_name">Dashboard</span>
-									</a>
-									<span class="tooltip">Dashboard</span>
-								</li>
-								<li>
-									<a class="navigation__link" href="#2">
-										<i class='bx bx-user'></i>
-										<span class="links_name">User</span>
-									</a>
-									<span class="tooltip">User</span>
-								</li>
-								<li>
-									<a class="navigation__link" href="#3">
-										<i class='bx bx-chat'></i>
-										<span class="links_name">Messages</span>
-									</a>
-									<span class="tooltip">Messages</span>
-								</li>
-								<li>
-									<a class="navigation__link" href="#4">
-										<i class='bx bx-pie-chart-alt-2'></i>
-										<span class="links_name">Analytics</span>
-									</a>
-									<span class="tooltip">Analytics</span>
-								</li>
-								<li>
-									<a class="navigation__link" href="#5">
-										<i class='bx bx-folder'></i>
-										<span class="links_name">File Manager</span>
-									</a>
-									<span class="tooltip">File Manager</span>
-								</li>
-								<li>
-									<a class="navigation__link" href="#6">
-										<i class='bx bx-cart-alt'></i>
-										<span class="links_name">Order</span>
-									</a>
-									<span class="tooltip">Order</span>
-								</li>
-								<li>
-									<a class="navigation__link" href="#7">
-										<i class='bx bx-heart'></i>
-										<span class="links_name">Saved</span>
-									</a>
-									<span class="tooltip">Saved</span>
-								</li>
-								<li>
-									<a class="navigation__link" href="#8">
-										<i class='bx bx-cog'></i>
-										<span class="links_name">Setting</span>
-									</a>
-									<span class="tooltip">Setting</span>
+									<div class="d-flex flex-column-date">
+										<button type="button"
+											class="btn btn-link px-0 pt-2 d-flex flex-column align-items-center PlanNarrowNavSidebarItem__text">
+											<span class="text-uppercase PlanNarrowNavSidebarItem__dateLabelWord">Feb</span>
+											<span class="PlanNarrowNavSidebarItem__dateLabelNumber">1</span>
+										</button>
+									</div>
+									<span class="tooltip">05 Feb, Thrusday</span>
 								</li>
 							</nav>
 						</ul>
-
 
 					</div>
 					<div class="page-section  padding-0" id="travel">
@@ -380,16 +331,13 @@
 										<h4 class="itinerary-text">Itinerary</h4>
 									</div>
 									<div class="col-md-3">
-										<button type="submit" class="secondary-btn-small"><i
-												class="far fa-calendar-alt"></i>&nbsp; 2/1 - 2/2</button>
+										<button type="submit" class="secondary-btn-small"><i class="far fa-calendar-alt"></i>&nbsp; 2/1 - 2/2</button>
 									</div>
 								</div>
 								<div class="row pt-10">
 									<div class="col-md-9">
 										<h5><strong>Tuesday, February 1st</strong></h5>
 										<p>Sub Heading</p>
-
-
 									</div>
 									<div class="col-md-3" align="right">
 										<div class="right">
@@ -419,21 +367,10 @@
 									</div>
 									<div class="col-md-12">
 										<h6>Recommended places</h6>
-
 									</div>
 								</div>
-
 							</div>
 						</div>
-					</div>
-					<div class="page-section" id="3">
-
-					</div>
-					<div class="page-section" id="4">
-
-					</div>
-					<div class="page-section" id="5">
-
 					</div>
 					<div class="page-section bg-gray">
 						<div class="container">
@@ -441,22 +378,19 @@
 								<div class="row">
 									<div class="col-md-12">
 										<p>Need help or have suggestions?</p>
-										<p><a href="mailto:admin@wanderlog.com">Get in touch with the Wanderlog team at
-												admin@wanderlog.com</a></p>
+										<p><a href="mailto:almosthavenindia@gmail.com">Get in touch with the Almosthaven team at almosthavenindia@gmail.com</a></p>
 									</div>
-
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 		<div class="col-md-6 padding-0 travel-map">
-      <agm-map >
- <agm-marker (mapReady)="mapReadyHandler($event)" [latitude]="lat" [longitude]="lng"></agm-marker>
-      </agm-map>
+			<agm-map>
+				<agm-marker (mapReady)="mapReadyHandler($event)" [latitude]="lat" [longitude]="lng"></agm-marker>
+			</agm-map>
 
 
 			<div class="map-card">
@@ -510,6 +444,3 @@
 	</div>
 </section>
 <!-- / Blog Ends -->
-
-
-
