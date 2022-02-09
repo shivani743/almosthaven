@@ -10,6 +10,10 @@ export class PlacesComponent implements OnInit {
 // @Input() placeName: string = 'Delhi';
 // @Input() date: string = '2022-02-02';
 @Input() data: any;
+public lat = 51.678418;
+    public lng = 7.809007;
+  map: any;
+  mapClickListener: any;
   constructor(private route: ActivatedRoute, private router: Router) {
 
     // this.route.queryParams.subscribe(params => {
@@ -19,7 +23,12 @@ export class PlacesComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.data)
-  }
 
+  }
+  public mapReadyHandler(map: any) {
+console.log(map)
+    map.addListener('click', (e:any) => {
+     console.log(e)
+    });
+  }
 }

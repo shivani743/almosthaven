@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import {ActivatedRoute,Router} from '@angular/router';
 import {ServerService} from '../services/server.service';
 
@@ -10,16 +11,38 @@ declare var google: any;
 })
 export class HomeComponent implements OnInit {
 
-  
+
   destination: any;
   addresses: any;
   place_ids: any = [];
   startDate: any;
   endDate: any;
   resp: any;
-  constructor(private route: ActivatedRoute, private router: Router, private server: ServerService) { }
+  campaignOne!: FormGroup;
+datee:any;
+  constructor(private route: ActivatedRoute, private router: Router, private server: ServerService) {
+    const today = new Date();
+    const month = today.getMonth();
+    const year = today.getFullYear();
+    this.campaignOne = new FormGroup({
+      start: new FormControl(''),
+      end: new FormControl(''),
+    });
+
+   }
   ngOnInit() {
     // this.searchh()
+    console.log(this.campaignOne)
+
+  }
+  start(type: any, e: any) {
+
+    this.startDate = new Date(e.value);
+
+  }
+  end(type: any, e: any) {
+    this.endDate = new Date(e.value);
+
   }
   change() {
     console.log(this.destination)
@@ -33,6 +56,7 @@ export class HomeComponent implements OnInit {
       this.addresses = data;
     })
   }
+
 
   onSelectPlace(address: any) {
 

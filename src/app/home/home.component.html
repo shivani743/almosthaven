@@ -94,12 +94,12 @@
                                     <mat-form-field class="example-full-width" appearance="fill">
                                         <input matInput name="destination" [(ngModel)]="destination" (ngModelChange)="change()"
                                         placeholder="Destinations or hotel name..."
-                                        class="form-control name input-your-name">                                        
+                                        class="form-control name input-your-name">
                                         <mat-autocomplete #auto="matAutocomplete" class="address-list">
-                                            <mat-option *ngFor="let address of addresses "[value]="address.place_id">
+                                            <mat-option *ngFor="let address of addresses | async" [value]="address.place_id" (onSelect)="onSelectPlace(address)">
                                                 {{ address.description }}
                                             </mat-option>
-                                            
+
                                         </mat-autocomplete>
                                     </mat-form-field>
                                     <span class="fa fa-question-circle theme-color"></span>
@@ -108,9 +108,9 @@
                                 <div class="form-group col-sm-12">
                                     <mat-form-field appearance="fill">
                                         <mat-label>Enter a date range</mat-label>
-                                        <mat-date-range-input [rangePicker]="picker">
-                                            <input matStartDate placeholder="Start date">
-                                            <input matEndDate placeholder="End date">
+                                        <mat-date-range-input  [formGroup]="campaignOne" [rangePicker]="picker">
+                                            <input (dateInput)="start('input', $event)" matStartDate formControlName="start" placeholder="Start date">
+                                            <input (dateInput)="end('input', $event)" matEndDate formControlName="end" placeholder="End date">
                                         </mat-date-range-input>
                                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                         <mat-date-range-picker #picker></mat-date-range-picker>
