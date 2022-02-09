@@ -27,7 +27,7 @@
                                 <li><a href="portfolio-col-three.html"> Give Feedback</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" data-toggle="modal" data-target="#exampleModalCenter">Log In</a></li>
+                        <!-- <li><a href="#" data-toggle="modal" data-target="#exampleModalCenter">Log In</a></li> -->
                         <li style="padding: 0px 0px 0px 42px!important;">
                             <a href="" type="button" class="btn btn-primary">Start Planning</a>
                         </li>
@@ -77,11 +77,11 @@
                         <form role="form" class="search-form" method="post">
                             <div class="row">
                                 <div class="form-group col-sm-12">
-                                    <input name="destination" [(ngModel)]="destination" (ngModelChange)="change()"
+                                    <!-- <input name="destination" [(ngModel)]="destination" (ngModelChange)="change()"
                                         placeholder="Destinations or hotel name..."
-                                        class="form-control name input-your-name">
+                                        class="form-control name input-your-name"> -->
                                     <!-- {{ formattedaddress }} -->
-                                    <div *ngFor="let address of addresses" class="address-list">
+                                    <!-- <div *ngFor="let address of addresses" class="address-list">
                                         <div class="address-item">
                                             <div class="address-item-inner">
                                                 <div class="address-item-content">
@@ -90,16 +90,18 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- <mat-form-field class="example-full-width" appearance="fill">
-                                        <mat-label>Number</mat-label>
-                                        <input name="destination" [(ngModel)]="destination" (ngModelChange)="change()" placeholder="Destinations or hotel name..." class="form-control name input-your-name">
-                                        <mat-autocomplete #auto="matAutocomplete">
-                                            <mat-option *ngFor="let address of addresses | async" [value]="addresses">
+                                    </div> -->
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input matInput name="destination" [(ngModel)]="destination" (ngModelChange)="change()"
+                                        placeholder="Destinations or hotel name..."
+                                        class="form-control name input-your-name">                                        
+                                        <mat-autocomplete #auto="matAutocomplete" class="address-list">
+                                            <mat-option *ngFor="let address of addresses "[value]="address.place_id">
                                                 {{ address.description }}
                                             </mat-option>
+                                            
                                         </mat-autocomplete>
-                                    </mat-form-field> -->
+                                    </mat-form-field>
                                     <span class="fa fa-question-circle theme-color"></span>
 
                                 </div>
