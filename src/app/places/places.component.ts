@@ -7,11 +7,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./places.component.scss']
 })
 export class PlacesComponent implements OnInit {
-// @Input() placeName: string = 'Delhi';
-// @Input() date: string = '2022-02-02';
-@Input() data: any;
-public lat = 51.678418;
-    public lng = 7.809007;
+  // @Input() placeName: string = 'Delhi';
+  // @Input() date: string = '2022-02-02';
+  @Input() data: any;
+  public lat = 22.805618;
+  public lng = 86.203110;
+  public zoom = '';
+  public mapHeight = '';
+  currentCenter = { lat: null, lng: null };
+
   map: any;
   mapClickListener: any;
   constructor(private route: ActivatedRoute, private router: Router) {
@@ -20,15 +24,21 @@ public lat = 51.678418;
     //   this.placeName = params['placeName'];
     //   this.date = params['date'];
     // })
-   }
-
+  }
+  markers = [
+    {
+        lat: 22.805618,
+        lng: 86.203110,
+        label: 'Jamshedpur'
+    },
+];
   ngOnInit(): void {
 
   }
   public mapReadyHandler(map: any) {
-console.log(map)
-    map.addListener('click', (e:any) => {
-     console.log(e)
+    console.log(map)
+    map.addListener('click', (e: any) => {
+      console.log(e)
     });
   }
 }

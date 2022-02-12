@@ -8197,8 +8197,19 @@ a.waves-effect, a.waves-light {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     vertical-align: baseline;
     white-space: nowrap;
+    margin-top: 10px;
 }
 
+
+.explore-img{height: 150px;
+position: relative;
+left: 0;
+right: 0;
+float: right;
+border-radius: 10px;
+margin-left: 12px;
+margin-bottom: 4px;
+}
 
 
 
@@ -8249,4 +8260,35 @@ a.waves-effect, a.waves-light {
 .flex-column-date{border: 1px solid #adadad;;
     border-radius: 10px;
     margin-top: 10px;
+}
+.left-0{
+    left: 0px!important;
+}
+.height100vh{
+    height: 100vh;
+}
+.nav-fixed{
+    width: calc(50% - 78px);
+    position:fixed;
+}
+
+
+
+.btn-explore{width: 100%;
+padding: 8px!important;
+background: #fff;
+border: 1px solid #999;
+color: #999!important;
+border-radius: 100px;
+}
+.map-icons{
+    font-size: 30px;
+    color: var(--green);
+}
+
+
+.explore-text{
+    font-size: 19px;
+    color: #000;
+    font-weight: 700;
 }

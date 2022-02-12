@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PlacesComponent } from './places/places.component';
+import { ExploreplacesComponent } from './exploreplaces/exploreplaces.component';
+
 
 const routes: Routes = [
   {
@@ -18,7 +20,12 @@ const routes: Routes = [
     path: 'places',
     loadChildren: () => import('./places/places.module').then(m => m.PlacesModule)
 
-  }
+  },
+  {
+    path: 'exploreplaces',
+    loadChildren: () => import('./exploreplaces/exploreplaces.module').then(m => m.PlacesModule)
+
+  },
 ];
 
 
