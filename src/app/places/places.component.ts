@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-places',
@@ -10,14 +12,17 @@ export class PlacesComponent implements OnInit {
   // @Input() placeName: string = 'Delhi';
   // @Input() date: string = '2022-02-02';
   @Input() data: any;
-  public lat = 22.805618;
-  public lng = 86.203110;
-  public zoom = '';
+  public lat = 22.4064172;;
+  public lng = 69.0750171;
+  public zoom = '4';
   public mapHeight = '';
   currentCenter = { lat: null, lng: null };
 
   map: any;
   mapClickListener: any;
+
+
+  
   constructor(private route: ActivatedRoute, private router: Router) {
 
     // this.route.queryParams.subscribe(params => {
@@ -27,10 +32,20 @@ export class PlacesComponent implements OnInit {
   }
   markers = [
     {
-        lat: 22.805618,
-        lng: 86.203110,
-        label: 'Jamshedpur'
+        lat: 21.1594627,
+        lng: 72.6822083,
+        label: 'Surat'
     },
+    {
+        lat: 23.0204978,
+        lng: 72.4396548,
+        label: 'Ahmedabad'
+    },
+    {
+        lat: 22.2736308,
+        lng: 70.7512555,
+        label: 'Rajkot'
+    }
 ];
   ngOnInit(): void {
 
@@ -41,4 +56,6 @@ export class PlacesComponent implements OnInit {
       console.log(e)
     });
   }
+
+
 }
