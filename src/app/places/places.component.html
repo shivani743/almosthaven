@@ -74,10 +74,10 @@
 									<div class="HoverTextInput__editableContainer HoverTextInput__lgContainer"><input
 											type="text" placeholder="Enter a trip name"
 											class="smartlook-show HoverTextInput__input HoverTextInput__lgInput PlanHeaderRedesign__title"
-											value="Trip to Mumbai">
+											[value]="data.tripName">
 										<div
 											class="HoverTextInput__dummyInput HoverTextInput__lgDummy rounded position-absolute d-flex flex-row align-items-center">
-											<span class="PlanHeaderRedesign__title invisible">Trip to Mumbai</span>
+											<span class="PlanHeaderRedesign__title invisible">{{data.tripName}}</span>
 										</div>
 									</div>
 								</div>
@@ -391,11 +391,11 @@
 				<agm-marker (mapReady)="mapReadyHandler($event)" [latitude]="lat" [longitude]="lng"></agm-marker>
 			</agm-map> -->
 			<!-- <agm-map [latitude]='lat' [longitude]='lng' [zoom]='5'>
-				<agm-marker *ngFor="let marker of markers"  [latitude]="marker.lat" [longitude]="marker.lng">    
+				<agm-marker *ngFor="let marker of markers"  [latitude]="marker.lat" [longitude]="marker.lng">
 					<agm-info-window #infoWindow>{{ marker.label }}</agm-info-window>
 				</agm-marker>
     		</agm-map> -->
-  
+
 			<!-- <div class="map-card">
 				<div class="alert alert-light alert-dismissible fade show" role="alert">
 					<div class="col-md-12">
@@ -443,21 +443,20 @@
 					</button>
 				</div>
 			</div> -->
-		
-		
+
+
 			<div class="map-wrapper3">
 				<section>
-					<agm-map [latitude]="lat" [longitude]="lng" [zoom]="5" [minZoom]="4" [maxZoom]="3"
+					<agm-map [zoom] = "5" [latitude]="lat" [longitude]="lng"
 						[style.height]="mapHeight" [scrollwheel]="false">
 						<agm-marker *ngFor="let marker of markers"  [latitude]="marker.lat" [longitude]="marker.lng">
-							  <agm-info-window  
+							  <agm-info-window
 							   [isOpen]="true"
 							  >
-								<div class="text-center" style="width: 200px">
+								<div class="text-center" style="width: 400px">
 										<div class="col-md-12">
-											<h6 class="font-weight-900"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Charminar</h6>
-											<div><span>Iconic 16th-century mosque with 4 grand arches, 48m tall minarets and views over the
-													Laad Bazaar.</span></div>
+											<h6 class="font-weight-900"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;{{marker.label}}</h6>
+											<div><span>{{marker.summary}}</span></div>
 											<div class="mtt-5">
 												<span
 													class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Monument</span>
@@ -494,7 +493,7 @@
 														class="text-web">www.almostindia.com</a></span>
 											</div>
 										</div>
-										
+
 									<!-- <h5 class="wrap">{{merchantDetails.MerchantName}}
 									  <span class="red fs13" *ngIf="merchantDetails.Status == 2"> (Currently offline)</span>
 									</h5> -->
@@ -510,7 +509,7 @@
 					</agm-map>
 				</section>
 			</div>
-		
+
 		</div>
 	</div>
 </section>

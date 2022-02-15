@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServerService } from '../services/server.service';
-
+import { v4 as uuidv4 } from 'uuid';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 declare var google: any;
 @Component({
   selector: 'app-home',
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit {
   datee: any;
 
 
-  
+
   constructor(private route: ActivatedRoute, private router: Router, private server: ServerService) {
     const today = new Date();
     const month = today.getMonth();
@@ -48,21 +49,28 @@ export class HomeComponent implements OnInit {
 
   }
   change() {
-    console.log(this.destination)
+
     this.searchh()
 
   }
-
+  onSelectionChanged (e: any) {
+console.log(e)
+  }
   searchh() {
     this.server.getPlacesSuggestions(this.destination).subscribe((data: any) => {
       console.log(data)
       this.addresses = data;
     })
   }
+displayFn(address:any) {
+  if(address){
 
+  return address.description;
+  }
+}
 
   onSelectPlace(address: any) {
-
+console.log(address)
     if (this.place_ids.length == 0) {
       this.place_ids.push(address.place_id);
     } else {
@@ -83,6 +91,9 @@ export class HomeComponent implements OnInit {
     }
   }
   getPlan() {
+
+const myId = uuidv4();
+console.log(myId)
     if (this.startDate != null || this.startDate != undefined || this.startDate != '' ||
       this.endDate != null || this.endDate != undefined || this.endDate != '') {
       const payload = {
@@ -92,13 +103,9 @@ export class HomeComponent implements OnInit {
       }
       this.server.postPlan(payload).subscribe((res) => {
         this.resp = res;
-
+console.log(res)
         localStorage.setItem('plan', JSON.stringify(this.resp));
-        this.router.navigate(['/places'], {
-          queryParams: {
-            data: this.resp
-          }
-        })
+        this.router.navigate([`/places`]);
       }),
         (err: any) => {
           console.log(err)
