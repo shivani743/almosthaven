@@ -8,16 +8,7 @@ agm-map {
   background-color: #00a4da!important;
 }
 
-.gm-style .gm-style-iw-c {
-  position: absolute;
-  box-sizing: border-box;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  transform: translate3d(-50%,-100%,0);
-  background-color: white;
-  border-radius: 8px;
-  padding: 12px;
-  box-shadow: 0 2px 35px 7px rgb(0 0 0 / 32%)!important;
-  width: 50%!important;
+
+.gm-style{
+  box-shadow: 0 2px 7px 13px rgb(0 0 0 / 8%)!important;
 }

@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-places',
@@ -18,6 +20,9 @@ export class PlacesComponent implements OnInit {
   place_id:any;
   map: any;
   mapClickListener: any;
+
+
+
   constructor(private route: ActivatedRoute, private router: Router) {
 
 //     this.route.queryParams.subscribe(params => {
@@ -51,4 +56,6 @@ export class PlacesComponent implements OnInit {
       console.log(e)
     });
   }
+
+
 }

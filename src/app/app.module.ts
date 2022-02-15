@@ -10,6 +10,8 @@ import { CoreModule } from './core/core.module';
 import { InterceptorService } from './core/services/http/interceptor.service';
 import { LocalStorageService } from './core/services/storage/local-storage.service';
 import { AgmCoreModule } from '@agm/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   imports: [
@@ -18,6 +20,8 @@ import { AgmCoreModule } from '@agm/core';
     AppRoutingModule,
     HomeModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     })
