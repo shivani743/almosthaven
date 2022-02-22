@@ -13,6 +13,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -32,12 +33,16 @@ import { MatInputModule } from '@angular/material/input';
     MatAutocompleteModule,
     MatDialogModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatChipsModule,
 
   ],
   declarations: [
     HomeComponent
   ],
 
+
 })
-export class HomeModule { }
+export class HomeModule {
+  
+ }

@@ -370,11 +370,18 @@
 										</div>
 									</div>
 									<div class="col-md-2 padding-0">
-										<button type="button" class="btn btn-info">Note</button>
+										<button type="button" class="btn btn-info" (click)="addvalue()">Note</button>
 									</div>
 									<div class="col-md-12">
-										<h6>Recommended places</h6>
+										<div *ngFor="let value of values; let i = index"> 
+											<input class="input-field" type="text" [(ngModel)]="value.value" #name="ngModel" name="value{{i}}">
+											<button class="btn btn-danger" (click)="removevalue(i)">Remove</button>
+										  </div>
 									</div>
+									
+									  <div *ngFor="let value of values;">
+										{{ value.value }}
+									  </div>
 								</div>
 							</div>
 						</div>

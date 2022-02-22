@@ -5,14 +5,21 @@ import { ServerService } from '../services/server.service';
 import { v4 as uuidv4 } from 'uuid';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 declare var google: any;
+
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material/chips';
+// import {MatChipInputEvent} from '@angular/material';
+
+export interface Fruit {
+  name: string;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-
   destination: any;
   addresses: any;
   place_ids: any = [];
@@ -21,6 +28,20 @@ export class HomeComponent implements OnInit {
   resp: any;
   campaignOne!: FormGroup;
   datee: any;
+
+
+
+  // visible = true;
+  // selectable = true;
+  // removable = true;
+  // addOnBlur = true;
+  // readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  // fruits: Fruit[] = [
+  //   {name: 'Lemon'},
+  //   {name: 'Lime'},
+  //   {name: 'Apple'},
+  // ];
+
 
 
 
@@ -116,4 +137,29 @@ console.log(res)
   }
 
 
+
+
+
+  // add(event: MatChipInputEvent): void {
+  //   const input = event.input;
+  //   const value = event.value;
+
+  //   // Add our fruit
+  //   if ((value || '').trim()) {
+  //     this.fruits.push({name: value.trim()});
+  //   }
+
+  //   // Reset the input value
+  //   if (input) {
+  //     input.value = '';
+  //   }
+  // }
+
+  // remove(fruit: Fruit): void {
+  //   const index = this.fruits.indexOf(fruit);
+
+  //   if (index >= 0) {
+  //     this.fruits.splice(index, 1);
+  //   }
+  // }
 }

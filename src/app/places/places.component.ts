@@ -20,6 +20,8 @@ export class PlacesComponent implements OnInit {
   place_id:any;
   map: any;
   mapClickListener: any;
+  // values = [{value: ""}];
+  values:any = [];
 
 
 
@@ -58,4 +60,14 @@ export class PlacesComponent implements OnInit {
   }
 
 
+  removevalue(i: number){
+    this.values.splice(i,1);
+  }
+
+  addvalue(){
+    this.values.push({value: ""});
+  }
+
 }
+
+

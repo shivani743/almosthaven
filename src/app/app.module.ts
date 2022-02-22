@@ -11,6 +11,8 @@ import { InterceptorService } from './core/services/http/interceptor.service';
 import { LocalStorageService } from './core/services/storage/local-storage.service';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatChipsModule } from '@angular/material/chips';
+
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeModule,
     HttpClientModule,
     FormsModule,
+    MatChipsModule,
     ReactiveFormsModule,
+    
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     })
@@ -32,6 +36,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+  ],
+
+  exports: [
+    MatChipsModule,
   ],
 
   providers: [{
