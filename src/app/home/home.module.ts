@@ -14,6 +14,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -35,6 +36,9 @@ import { MatChipsModule } from '@angular/material/chips';
     MatSelectModule,
     MatInputModule,
     MatChipsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+    })
 
   ],
   declarations: [

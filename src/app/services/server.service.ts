@@ -14,7 +14,7 @@ export class ServerService {
 
 
   }
-  private BASE_URL = 'http://3.111.30.217/user/';
+  private BASE_URL = 'http://52.66.242.10/user/';
   private sample_photo_id = 'Aap_uEBLF3KN_DIY00w1ORDNCndNVnZbbt5Y5hGrKAK1L4f5n8Ln1Pq7oJBJcSfORwAcGk8u2Zr8kRKBJyZtFLYIQfbBrS37Z0fBN_ueJPjwipezOnx5BEaXl519BTdQ6G1ydEg_wXJYG7lTL1Yo1UJotkButvErzQeaZQfrrIdhdg2seLfM';
   private sampleWidth = 4000;
   private sampleHeight = 1800

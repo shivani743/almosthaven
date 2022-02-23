@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, startWith } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -18,11 +20,11 @@ export class PlacesComponent implements OnInit {
   public mapHeight = '';
   currentCenter = { lat: null, lng: null };
   place_id:any;
-  map: any;
   mapClickListener: any;
   // values = [{value: ""}];
   values:any = [];
-
+  destination = "";
+  Addplaces:any = [];
 
 
   constructor(private route: ActivatedRoute, private router: Router) {
@@ -45,12 +47,17 @@ export class PlacesComponent implements OnInit {
         lat: placesInfo[i].location.lat,
         lng: placesInfo[i].location.lng,
         label: placesInfo[i].formatted_address,
-        summary: placesInfo[i].summary
-
+        summary: placesInfo[i].summary,
       }
       this.markers.push(mar)
-
     }
+
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map((value: string) => this._filter(value)),
+    );
+    
   }
   public mapReadyHandler(map: any) {
     console.log(map)
@@ -59,7 +66,7 @@ export class PlacesComponent implements OnInit {
     });
   }
 
-
+//* note section start here*//
   removevalue(i: number){
     this.values.splice(i,1);
   }
@@ -67,7 +74,41 @@ export class PlacesComponent implements OnInit {
   addvalue(){
     this.values.push({value: ""});
   }
+  //* note section end here*//
 
+  //* Add Places section start here*//
+  removePlacesValue(i: number){
+    this.Addplaces.splice(i,1);
+  }
+
+  addPlacesValue(){
+    this.Addplaces.push({value: ""});
+  }
+  //* Add Places section end here*//
+
+  //* Add Places dropdown section here*//
+
+  myControl = new FormControl();
+  options: string[] = ['One', 'Two', 'Three'];
+  filteredOptions: Observable<string[]> | undefined;
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+  onSelectPlace(data:any)
+  {
+    // alert(data)
+  }
+  change()
+  {
+    if (this.destination.trim() !="" && this.destination != null)
+    {
+    alert(this.destination)
+    this.addPlacesValue();
+    }
+  }
 }
 
 

@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 declare var google: any;
 
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 // import {MatChipInputEvent} from '@angular/material';
 
@@ -70,12 +70,10 @@ export class HomeComponent implements OnInit {
 
   }
   change() {
-
     this.searchh()
-
   }
-  onSelectionChanged (e: any) {
-console.log(e)
+  onSelectionChanged(e: any) {
+    console.log(e)
   }
   searchh() {
     this.server.getPlacesSuggestions(this.destination).subscribe((data: any) => {
@@ -83,15 +81,15 @@ console.log(e)
       this.addresses = data;
     })
   }
-displayFn(address:any) {
-  if(address){
+  displayFn(address: any) {
+    if (address) {
 
-  return address.description;
+      return address.description;
+    }
   }
-}
 
   onSelectPlace(address: any) {
-console.log(address)
+    console.log(address)
     if (this.place_ids.length == 0) {
       this.place_ids.push(address.place_id);
     } else {
@@ -113,8 +111,8 @@ console.log(address)
   }
   getPlan() {
 
-const myId = uuidv4();
-console.log(myId)
+    const myId = uuidv4();
+    console.log(myId)
     if (this.startDate != null || this.startDate != undefined || this.startDate != '' ||
       this.endDate != null || this.endDate != undefined || this.endDate != '') {
       const payload = {
@@ -124,7 +122,7 @@ console.log(myId)
       }
       this.server.postPlan(payload).subscribe((res) => {
         this.resp = res;
-console.log(res)
+        console.log(res)
         localStorage.setItem('plan', JSON.stringify(this.resp));
         this.router.navigate([`/places`]);
       }),
