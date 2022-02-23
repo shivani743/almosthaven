@@ -12,6 +12,10 @@ import { LocalStorageService } from './core/services/storage/local-storage.servi
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
+import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+
+
 
 
 
@@ -25,7 +29,8 @@ import { MatChipsModule } from '@angular/material/chips';
     FormsModule,
     MatChipsModule,
     ReactiveFormsModule,
-    
+    MatButtonModule,
+    MatInputModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     })

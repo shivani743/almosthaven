@@ -1,9 +1,8 @@
-
 <!-- Blog Start -->
 <section class="light-bg">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-6 travel-card">
+			<div class="col-md-6 col-sm-12 col-xs-12 travel-card">
 				<div class="home_content">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light">
 						<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -24,13 +23,19 @@
 							</ul>
 							<div class="">
 								<div class="btn-group" role="group" aria-label="Basic example">
-									<button class="dark-btn-small"><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;Get App</button>
+									<button class="dark-btn-small"><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;Get
+										App</button>
 									<div class="dropdown">
-										<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></button>
+										<button class="btn btn-light dropdown-toggle" type="button"
+											id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"><i
+												class="fa fa-ellipsis-v"></i></button>
 										<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-											<a class="dropdown-item" href="#"><i class="fa fa-cog"></i>&nbsp;Trip Setting</a>
-											<a class="dropdown-item" href="#"><i class="fa fa-question"></i>&nbsp;FAQ</a>
-											<a class="dropdown-item" href="#"><i class="fa fa-print"></i>&nbsp;Print this Trip</a>
+											<a class="dropdown-item" href="#"><i class="fa fa-cog"></i>&nbsp;Trip
+												Setting</a>
+											<a class="dropdown-item" href="#"><i
+													class="fa fa-question"></i>&nbsp;FAQ</a>
+											<a class="dropdown-item" href="#"><i class="fa fa-print"></i>&nbsp;Print
+												this Trip</a>
 										</div>
 									</div>
 								</div>
@@ -54,7 +59,8 @@
 									<div class="d-flex flex-column-date">
 										<button type="button"
 											class="btn btn-link px-0 pt-2 d-flex flex-column align-items-center PlanNarrowNavSidebarItem__text">
-											<span class="text-uppercase PlanNarrowNavSidebarItem__dateLabelWord">Feb</span>
+											<span
+												class="text-uppercase PlanNarrowNavSidebarItem__dateLabelWord">Feb</span>
 											<span class="PlanNarrowNavSidebarItem__dateLabelNumber">1</span>
 										</button>
 									</div>
@@ -93,7 +99,7 @@
 						</div>
 						<section class="sec-space-top  pb-5 bg-gray">
 							<div class="page-section container">
-							
+								<h1>Slider here</h1>
 							</div>
 						</section>
 					</div>
@@ -172,18 +178,19 @@
 							</div>
 						</div>
 					</div>
-					<div class="page-section border-top-bottom-15" id="2">
+					<div class="border-top-bottom-15" id="2">
 						<div class="container">
 							<div class="ptb-30">
-								<div class="row">
+								<div class="row page-section ">
 									<div class="col-md-9 col-sm-8 col-xs-8">
 										<h4 class="itinerary-text">Itinerary</h4>
 									</div>
 									<div class="col-md-3 col-sm-4 col-xs-4 padding-0">
-										<button type="submit" class="secondary-btn-small"><i class="far fa-calendar-alt"></i>&nbsp; 2/1 - 2/2</button>
+										<button type="submit" class="secondary-btn-small"><i
+												class="far fa-calendar-alt"></i>&nbsp; 2/1 - 2/2</button>
 									</div>
 								</div>
-								<div class="row pt-10">
+								<div class="page-section row pt-10">
 									<div class="col-md-9 col-sm-8 col-xs-8">
 										<h5><strong>Tuesday, February 1st</strong></h5>
 										<p>Sub Heading</p>
@@ -204,64 +211,87 @@
 										</div>
 									</div>
 								</div>
-								<div class="row pt-10">
-									<div class="col-md-10">
-										<div>
-											
-											<mat-form-field class="example-full-width" appearance="fill">
-												<mat-label>Number</mat-label>
-												<input type="text"
-													   placeholder="Pick one"
-													   aria-label="Number"
-													   matInput
-													   [formControl]="myControl"
-													   [matAutocomplete]="auto"
-													   [(ngModel)]="destination" (ngModelChange)="change()">
-														<mat-autocomplete #auto="matAutocomplete" (optionSelected)='onSelectPlace($event.option.value)'>
-														<mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-															{{option}}
-														</mat-option>
-														</mat-autocomplete>
-											  </mat-form-field>
-											  <!-- <div class="col-md-2 padding-0">
-												<button type="button" class="btn btn-info" (click)="addvalue()">Note</button>
-											</div> -->
-											<div class="col-md-12">
-												<div *ngFor="let value of Addplaces; let i = index"> 
-													<input class="input-field" type="text" [(ngModel)]="value.value" #name="ngModel" name="value{{i}}">
-													<button class="btn btn-danger" (click)="removePlacesValue(i)">Remove</button>
-												  </div>
+								<div class="row  pt-10">
+
+									<div class="col-md-12 col-sm-12 col-xs-12">
+										<div class="col-md-12 col-sm-12 col-xs-12 border-left-web">
+											<div *ngFor="let value of Addplaces; let i = index">
+												<div class="row ptb-30">
+													<div class="col-md-8 col-xs-8 col-sm-8">
+														<input type="text" id="exampleForm2" class="form-control"
+															value="" placeholder="Pune">
+														<br>
+														<textarea class="form-control rounded-0"
+															id="exampleFormControlTextarea2"
+															rows="3">From the web: Jejuri is a city and a municipal council in Pune district in the Indian state of Maharashtra. It is famous for the main temple of Lord Khandoba. It is a famous temple town being the family deity of many houses in Maharashtra and Karnataka.</textarea>
+													</div>
+													<div class="col-md-3 col-xs-3 col-sm-3 padding-0">
+														<img src="https://itin-dev.sfo2.cdn.digitaloceanspaces.com/freeImageSmall/HnlqskQcEspfQtVs3kDlhzQp1KbtU8rA"
+															class="explore-img">
+													</div>
+													<div class="col-md-1 col-sm-1 col-xs-1">
+														<button class="btn btn-danger"
+															(click)="removePlacesValue(i)"></button>
+													</div>
+												</div>
 											</div>
-											
-											  <div *ngFor="let value of Addplaces;">
-												{{ value.value }}
-											  </div>
+										</div>
+
+										<div class="page-section row pt-10">
+											<div class="col-md-10">
+												<form class="example-form">
+													<mat-form-field class="example-full-width" appearance="fill">
+														<mat-label>Add Places</mat-label>
+														<input type="text" placeholder="Pick one" aria-label="Number"
+															matInput [formControl]="myControl" [matAutocomplete]="auto"
+															[(ngModel)]="destination" (ngModelChange)="change()">
+														<mat-autocomplete #auto="matAutocomplete"
+															(optionSelected)='onSelectPlace($event.option.value)'>
+															<mat-option *ngFor="let option of filteredOptions | async"
+																[value]="option">
+																{{option}}
+															</mat-option>
+														</mat-autocomplete>
+													</mat-form-field>
+												</form>
+
+											</div>
+											<div class="col-md-2 col-sm-4 col-xs-4 padding-0">
+												<button mat-raised-button color="primary"
+													(click)="addvalue()">Note</button>
+											</div>
+										</div>
+
+										<div class="page-section">
+											<div class="row" *ngFor="let value of values; let i = index" style="margin-top: 15px!important;">
+												<div class="col-md-10 col-sm-8 col-xs-8">
+													<input class="input-field" type="text" [(ngModel)]="value.value"
+														#name="ngModel" name="value{{i}}">
+												</div>
+												<div class="col-md-2 col-sm-4 col-xs-4 padding-0">
+													<button class="note-btn" mat-icon-button color="primary"
+														aria-label="Example icon button with a home icon"
+														(click)="removevalue(i)">
+														<mat-icon>Delete</mat-icon>
+													</button>
+												</div>
+
+											</div>
 										</div>
 									</div>
-									<div class="col-md-2 padding-0">
-										<button type="button" class="btn btn-info" (click)="addvalue()">Note</button>
-									</div>
-									<div class="col-md-12">
-										<div *ngFor="let value of values; let i = index"> 
-											<input class="input-field" type="text" [(ngModel)]="value.value" #name="ngModel" name="value{{i}}">
-											<button class="btn btn-danger" (click)="removevalue(i)">Remove</button>
-										  </div>
-									</div>
-									
-									  <div *ngFor="let value of values;">
-										{{ value.value }}
-									  </div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="page-section bg-gray">
-						<div class="container">
-							<div class="ptb-30">
-								<div class="row">
-									<div class="col-md-12">
-										<p>Need help or have suggestions?</p>
-										<p><a href="mailto:almosthavenindia@gmail.com">Get in touch with the Almosthaven team at almosthavenindia@gmail.com</a></p>
+						<div class=" bg-gray">
+							<div class="container">
+								<div class="ptb-30">
+									<div class="row">
+										<div class="col-md-12">
+											<p>Need help or have suggestions?</p>
+											<p><a href="mailto:almosthavenindia@gmail.com">Get in touch with the
+													Almosthaven
+													team at almosthavenindia@gmail.com</a></p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -269,84 +299,27 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-md-6 padding-0 travel-map">
-			<!-- <agm-map [latitude]="lat" [longitude]="lng">
-				<agm-marker (mapReady)="mapReadyHandler($event)" [latitude]="lat" [longitude]="lng"></agm-marker>
-			</agm-map> -->
-			<!-- <agm-map [latitude]='lat' [longitude]='lng' [zoom]='5'>
-				<agm-marker *ngFor="let marker of markers"  [latitude]="marker.lat" [longitude]="marker.lng">
-					<agm-info-window #infoWindow>{{ marker.label }}</agm-info-window>
-				</agm-marker>
-    		</agm-map> -->
-
-			<!-- <div class="map-card">
-				<div class="alert alert-light alert-dismissible fade show" role="alert">
-					<div class="col-md-12">
-						<h6 class="font-weight-900"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Charminar</h6>
-						<div><span>Iconic 16th-century mosque with 4 grand arches, 48m tall minarets and views over the
-								Laad Bazaar.</span></div>
-						<div class="mtt-5">
-							<span
-								class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Monument</span>
-							<span class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Points of
-								Interest &amp; Landmarks</span>
-							<span class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Sights
-								&amp; Landmarks</span>
-							<span
-								class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Historical
-								place</span>
-						</div>
-						<div class="mtt-5">
-							<span class="text-warning"><i class="fas fa-star"></i>&nbsp; 4.5</span>
-						</div>
-						<div class="mtt-5">
-							<span class="text-secondary"><i
-									class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;<span>Charminar Rd, Char Kaman, Ghansi
-									Bazaar, Hyderabad, Telangana 500002, India</span></span>
-						</div>
-						<div class="mtt-5">
-							<span class="text-secondary"><i class="far fa-clock"></i>&nbsp;&nbsp; Tuesday: 9AM –
-								5:30PM</span>
-						</div>
-						<div class="mtt-5">
-							<span class="text-secondary"><i class="fas fa-hourglass-half"></i>&nbsp;&nbsp; People
-								typically spend 20 min here</span>
-						</div>
-						<div class="mtt-5">
-							<span class="text-secondary"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;<a href=""
-									class="text-web">+91 40 6674 5986</a></span>
-						</div>
-						<div class="mtt-5">
-							<span class="text-secondary"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp; <a href=""
-									class="text-web">www.almostindia.com</a></span>
-						</div>
-					</div>
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-			</div> -->
-
-
-			<div class="map-wrapper3">
-				<section>
-					<agm-map [zoom] = "5" [latitude]="lat" [longitude]="lng"
-						[style.height]="mapHeight" [scrollwheel]="false">
-						<agm-marker *ngFor="let marker of markers"  [latitude]="marker.lat" [longitude]="marker.lng">
-							  <agm-info-window
-							   [isOpen]="true"
-							  >
-								<div class="text-center" style="width: 400px">
+			<div class="col-md-6 padding-0 travel-map">
+				<div class="map-wrapper3">
+					<section>
+						<agm-map [zoom]="5" [latitude]="lat" [longitude]="lng" [style.height]="mapHeight"
+							[scrollwheel]="false">
+							<agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng">
+								<agm-info-window [isOpen]="true">
+									<div class="text-center" style="width: 400px">
 										<div class="col-md-12">
-											<h6 class="font-weight-900"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;{{marker.label}}</h6>
+											<h6 class="font-weight-900"><i
+													class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;{{marker.label}}</h6>
 											<div><span>{{marker.summary}}</span></div>
 											<div class="mtt-5">
 												<span
 													class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Monument</span>
-												<span class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Points of
+												<span
+													class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Points
+													of
 													Interest &amp; Landmarks</span>
-												<span class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Sights
+												<span
+													class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Sights
 													&amp; Landmarks</span>
 												<span
 													class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Historical
@@ -357,43 +330,40 @@
 											</div>
 											<div class="mtt-5">
 												<span class="text-secondary"><i
-														class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;<span>Charminar Rd, Char Kaman, Ghansi
+														class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;<span>Charminar
+														Rd,
+														Char Kaman, Ghansi
 														Bazaar, Hyderabad, Telangana 500002, India</span></span>
 											</div>
 											<div class="mtt-5">
-												<span class="text-secondary"><i class="far fa-clock"></i>&nbsp;&nbsp; Tuesday: 9AM –
+												<span class="text-secondary"><i class="far fa-clock"></i>&nbsp;&nbsp;
+													Tuesday: 9AM –
 													5:30PM</span>
 											</div>
 											<div class="mtt-5">
-												<span class="text-secondary"><i class="fas fa-hourglass-half"></i>&nbsp;&nbsp; People
+												<span class="text-secondary"><i
+														class="fas fa-hourglass-half"></i>&nbsp;&nbsp; People
 													typically spend 20 min here</span>
 											</div>
 											<div class="mtt-5">
-												<span class="text-secondary"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;<a href=""
+												<span class="text-secondary"><i
+														class="fas fa-phone-alt"></i>&nbsp;&nbsp;<a href=""
 														class="text-web">+91 40 6674 5986</a></span>
 											</div>
 											<div class="mtt-5">
-												<span class="text-secondary"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp; <a href=""
+												<span class="text-secondary"><i
+														class="fas fa-globe-americas"></i>&nbsp;&nbsp; <a href=""
 														class="text-web">www.almostindia.com</a></span>
 											</div>
 										</div>
+									</div>
+								</agm-info-window>
+							</agm-marker>
+						</agm-map>
+					</section>
+				</div>
 
-									<!-- <h5 class="wrap">{{merchantDetails.MerchantName}}
-									  <span class="red fs13" *ngIf="merchantDetails.Status == 2"> (Currently offline)</span>
-									</h5> -->
-									<!-- <p class="wrap mb5">{{merchantDetails.Address}}, {{merchantDetails.Postcode}}</p>
-									<p class="wrap mb5 green">{{merchantDetails.Cusines}}</p>
-									<p class="wrap mb5">Contact Number: {{merchantDetails.ContactNumber}}</p>
-									<div class="mb5">
-									  <a class="btn theme-btn-dash mt15" (click)="goProfile(merchantId)">View Menu</a>
-									</div>                             -->
-								  </div>
-							  </agm-info-window>
-						</agm-marker>
-					</agm-map>
-				</section>
 			</div>
-
 		</div>
 	</div>
 </section>

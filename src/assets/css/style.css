@@ -866,11 +866,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
 
-textarea.form-control, textarea {
-    height: auto !important;
-    resize: vertical;
-}
-
 /*-- Checkbox/Radiobox Starts --*/
 .form-group [type="checkbox"], .form-group [type="radio"] {
     border: 0 none;
@@ -7535,7 +7530,7 @@ button.close {
     top: 0;
     left: 0;
     height: 100%;
-    width: 78px;
+    width: 55px;
     background: var(--black-color);
     padding: 6px 14px;
     z-index: 99;
@@ -7771,8 +7766,8 @@ button.close {
 
 .home_content {
     position: absolute;
-    width: calc(100% - 78px);
-    left: 78px;
+    width: calc(100% - 55px);
+    left: 55px;
     background: var(--sky-color);
     box-shadow: 23px 13px 29px 0px rgb(0 0 0 / 18%);
     transition: all 0.5s ease;

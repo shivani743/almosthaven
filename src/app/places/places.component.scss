@@ -12,3 +12,30 @@ agm-map {
 .gm-style{
   box-shadow: 0 2px 7px 13px rgb(0 0 0 / 8%)!important;
 }
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.note-btn{
+  position:absolute;
+  margin-left: 10px;
+}
+
+.form-control {
+  background: #eceff1;
+}
+.border-left-web{
+  border-left:4px solid #eceff1;
+}
+textarea.form-control, textarea {
+  resize: vertical;
+  font-size: 15px;
+  border-radius: 5px!important;
+  min-height: 145px;
+}
