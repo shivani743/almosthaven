@@ -113,7 +113,7 @@
 											<span class="font-weight-bold font-size-16 text-dark">Reservations and
 												attachments</span>
 											<div class="d-flex align-items-baseline mt-2">
-												<div role="button" tabindex="0" class="flex-column align-items-center">
+												<div (click)="openDialog()" role="button" tabindex="0" class="flex-column align-items-center">
 													<span
 														class="d-flex justify-content-center align-items-center mt-1 text-dark">
 														<i class="fa fa-fighter-jet"></i>
@@ -186,14 +186,14 @@
 										<h4 class="itinerary-text">Itinerary</h4>
 									</div>
 									<div class="col-md-3 col-sm-4 col-xs-4 padding-0">
-										<button type="submit" class="secondary-btn-small"><i
-												class="far fa-calendar-alt"></i>&nbsp; 2/1 - 2/2</button>
+										<button type="submit" class="secondary-btn-small"><i class="fa fa-calendar" aria-hidden="true"></i>
+											&nbsp; 2/1 - 2/2</button>
 									</div>
 								</div>
 								<div class="page-section row pt-10">
 									<div class="col-md-9 col-sm-8 col-xs-8">
 										<h5><strong>Tuesday, February 1st</strong></h5>
-										<p>Sub Heading</p>
+										<!-- <h5>Sub Heading</h5> -->
 									</div>
 									<div class="col-md-3 col-sm-4 col-xs-4 padding-0" align="right">
 										<div class="right">
@@ -230,8 +230,9 @@
 															class="explore-img">
 													</div>
 													<div class="col-md-1 col-sm-1 col-xs-1">
-														<button class="btn btn-danger"
-															(click)="removePlacesValue(i)"></button>
+														<button class="btn btn-outline-danger"
+															(click)="removePlacesValue(i)"><i class="fa fa-trash" aria-hidden="true"></i>
+														</button>
 													</div>
 												</div>
 											</div>
@@ -257,13 +258,13 @@
 
 											</div>
 											<div class="col-md-2 col-sm-4 col-xs-4 padding-0">
-												<button mat-raised-button color="primary"
+												<button class="btn-web" mat-raised-button color="primary"
 													(click)="addvalue()">Note</button>
 											</div>
 										</div>
 
 										<div class="page-section">
-											<div class="row" *ngFor="let value of values; let i = index" style="margin-top: 15px!important;">
+											<div class="row" *ngFor="let value of values; let i = index">
 												<div class="col-md-10 col-sm-8 col-xs-8">
 													<input class="input-field" type="text" [(ngModel)]="value.value"
 														#name="ngModel" name="value{{i}}">
@@ -278,6 +279,11 @@
 
 											</div>
 										</div>
+										
+										<div class="page-section mtt-5">
+											<p class="text-dark"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>&nbsp;&nbsp;
+ 												Recommonded Places</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -286,7 +292,7 @@
 							<div class="container">
 								<div class="ptb-30">
 									<div class="row">
-										<div class="col-md-12">
+										<div class="col-md-12 page-section">
 											<p>Need help or have suggestions?</p>
 											<p><a href="mailto:almosthavenindia@gmail.com">Get in touch with the
 													Almosthaven
@@ -367,4 +373,6 @@
 		</div>
 	</div>
 </section>
+
+
 <!-- / Blog Ends -->

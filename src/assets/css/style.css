@@ -6913,12 +6913,12 @@ ul.list-caret small {
     15 - COLOR STARTS 
 ********************************/
 /* Color */
-.theme-color, a:hover, a:focus, .main-slider-1 .search-tabs a:hover, .main-slider-1 .search-tabs .active a, .white-color a.theme-color,
+/* .theme-color, a:hover, a:focus, .main-slider-1 .search-tabs a:hover, .main-slider-1 .search-tabs .active a, .white-color a.theme-color,
 .primary-navbar>li.active>a, .main-slider-1 .search-tabs a:hover span, .main-slider-1 .search-tabs .active a span, .main-banner-1 .search-tabs .active a,
 .btn.focus, .btn:focus, .btn:hover, .current a, .detail-tabs .list-inline>li.active a, .tab-holder .tab-pane h3 a.collapsed:after,
 ul.list-caret li:before, .search-form button.form-control:hover {
     color: #00a4da;
-}
+} */
 
 
 /* Background Color */
@@ -8287,3 +8287,5 @@ border-radius: 100px;
     color: #000;
     font-weight: 700;
 }
+
+

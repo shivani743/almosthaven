@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { HeaderComponent } from './header/header.component';
@@ -14,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import {MatDialogModule } from '@angular/material/dialog';
+import { FlightComponent } from './flight/flight.component';
 
 
 
@@ -31,6 +34,7 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     MatButtonModule,
     MatInputModule,
+    MatDialogModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     })
@@ -41,6 +45,7 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    FlightComponent,
   ],
 
   exports: [

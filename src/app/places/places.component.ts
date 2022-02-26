@@ -3,6 +3,8 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, startWith } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+
 
 
 @Component({
@@ -25,6 +27,8 @@ export class PlacesComponent implements OnInit {
   values:any = [];
   destination = "";
   Addplaces:any = [];
+  openDialog:any;
+  
 
 
   constructor(private route: ActivatedRoute, private router: Router) {
@@ -109,6 +113,8 @@ export class PlacesComponent implements OnInit {
     this.addPlacesValue();
     }
   }
+
+  
 }
 
 
