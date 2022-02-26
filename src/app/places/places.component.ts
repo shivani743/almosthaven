@@ -3,8 +3,6 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, startWith } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { MatDialog } from '@angular/material/dialog';
-
 
 
 @Component({
@@ -15,32 +13,47 @@ import { MatDialog } from '@angular/material/dialog';
 export class PlacesComponent implements OnInit {
   // @Input() placeName: string = 'Delhi';
   // @Input() date: string = '2022-02-02';
+  campaignOne!: FormGroup;
+  campaignTwo: FormGroup;
   data: any;
   public lat: any;
   public lng: any;
   public zoom = '';
   public mapHeight = '';
   currentCenter = { lat: null, lng: null };
-  place_id:any;
+  place_id: any;
   mapClickListener: any;
   // values = [{value: ""}];
-  values:any = [];
+  values: any = [];
   destination = "";
-  Addplaces:any = [];
-  openDialog:any;
-  
+  Addplaces: any = [];
+  range: any;
+
+
 
 
   constructor(private route: ActivatedRoute, private router: Router) {
 
-//     this.route.queryParams.subscribe(params => {
-//       this.data = params['data'];
-// console.log(this.data)
-//     })
+    //     this.route.queryParams.subscribe(params => {
+    //       this.data = params['data'];
+    // console.log(this.data)
+    //     })
+    const today = new Date();
+    const month = today.getMonth();
+    const year = today.getFullYear();
+
+    this.campaignOne = new FormGroup({
+      start: new FormControl(new Date(year, month, 13)),
+      end: new FormControl(new Date(year, month, 16)),
+    });
+    this.campaignTwo = new FormGroup({
+      start: new FormControl(new Date(year, month, 15)),
+      end: new FormControl(new Date(year, month, 19)),
+    });
   }
   markers: any[] = [];
   ngOnInit(): void {
-    const p:any = localStorage.getItem('plan')
+    const p: any = localStorage.getItem('plan')
     this.data = JSON.parse(p)
     console.log(this.data)
     const placesInfo = this.data.placesInfo
@@ -61,7 +74,7 @@ export class PlacesComponent implements OnInit {
       startWith(''),
       map((value: string) => this._filter(value)),
     );
-    
+
   }
   public mapReadyHandler(map: any) {
     console.log(map)
@@ -70,23 +83,23 @@ export class PlacesComponent implements OnInit {
     });
   }
 
-//* note section start here*//
-  removevalue(i: number){
-    this.values.splice(i,1);
+  //* note section start here*//
+  removevalue(i: number) {
+    this.values.splice(i, 1);
   }
 
-  addvalue(){
-    this.values.push({value: ""});
+  addvalue() {
+    this.values.push({ value: "" });
   }
   //* note section end here*//
 
   //* Add Places section start here*//
-  removePlacesValue(i: number){
-    this.Addplaces.splice(i,1);
+  removePlacesValue(i: number) {
+    this.Addplaces.splice(i, 1);
   }
 
-  addPlacesValue(){
-    this.Addplaces.push({value: ""});
+  addPlacesValue() {
+    this.Addplaces.push({ value: "" });
   }
   //* Add Places section end here*//
 
@@ -101,20 +114,17 @@ export class PlacesComponent implements OnInit {
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
-  onSelectPlace(data:any)
-  {
+  onSelectPlace(data: any) {
     // alert(data)
   }
-  change()
-  {
-    if (this.destination.trim() !="" && this.destination != null)
-    {
-    alert(this.destination)
-    this.addPlacesValue();
+  change() {
+    if (this.destination.trim() != "" && this.destination != null) {
+      alert(this.destination)
+      this.addPlacesValue();
     }
   }
 
-  
+
 }
 
 

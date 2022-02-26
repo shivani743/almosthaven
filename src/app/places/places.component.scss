@@ -40,3 +40,95 @@ textarea.form-control, textarea {
   border-radius: 5px!important;
   min-height: 145px;
 }
+.modal-header .close {
+  padding: 2px 11px 5px 11px;
+  margin: 0px;
+}
+.flight-header{
+    border-bottom: 1px solid #ffffff;
+}
+.flight-body{
+  padding: 5px!important;
+  border: 0px!important;
+  margin-bottom: 20px;
+}
+.flight-content{
+  padding: 0px 40px!important;
+}
+.flight-btn{
+  color: #000;
+  background-color: #d4f4ff;
+  border-color: #ffffff;
+  font-size: 17px!important;
+  border-radius: 20px!important;
+}
+.ImportEmailsModalInner__or {
+  color: #6c757d;
+  font-size: .875rem;
+}
+hr {
+  border-top-color: #dee2e6;
+}
+.mb-17{
+  margin-bottom: -17px!important;
+}
+
+::ng-deep .cdk-overlay-container mat-datepicker-content{
+  z-index:+2000;
+}
+.mat-calendar {
+  display: block;
+  z-index: 2050;
+}
+::ng-deep.cdk-overlay-pane {
+  z-index: 0!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.modal.modal-fullscreen .modal-dialog,
+.modal.modal-fullscreen .modal-content {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.modal.modal-fullscreen .modal-dialog {
+  margin: 0;
+  width: 100%;
+  animation-duration:0.6s;
+}
+.modal.modal-fullscreen .modal-content {
+  border: none;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: inherit;
+  -moz-box-shadow: inherit;
+  -o-box-shadow: inherit;
+  box-shadow: inherit;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-body {
+  padding: 0;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-header,
+.modal.modal-fullscreen.force-fullscreen .modal-footer {
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-header {
+  top: 0;
+}
+.modal.modal-fullscreen.force-fullscreen .modal-footer {
+  bottom: 0;
+}

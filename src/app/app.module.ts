@@ -13,14 +13,10 @@ import { LocalStorageService } from './core/services/storage/local-storage.servi
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import {MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FlightComponent } from './flight/flight.component';
-
-
-
-
 
 @NgModule({
   imports: [

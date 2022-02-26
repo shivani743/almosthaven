@@ -1,8 +1,14 @@
+<style>
+	.mat-calendar {
+		display: block;
+		z-index: +99999 !important;
+	}
+</style>
 <!-- Blog Start -->
 <section class="light-bg">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-6 col-sm-12 col-xs-12 travel-card">
+			<div class="col-lg-6 col-md-8 col-sm-12 col-xs-12 travel-card">
 				<div class="home_content">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light">
 						<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -42,7 +48,11 @@
 
 							</div>
 						</div>
+						<!-- <button class="btn btn-secondary" data-toggle="modal" data-target="#myModalFullscreen" contenteditable="false"><i class="fa fa-map" aria-hidden="true"></i>
+						</button> -->
+
 					</nav>
+
 					<div class="sidebar">
 						<div class="logo_content">
 							<div class="logo">
@@ -58,7 +68,7 @@
 								<li>
 									<div class="d-flex flex-column-date">
 										<button type="button"
-											class="btn btn-link px-0 pt-2 d-flex flex-column align-items-center PlanNarrowNavSidebarItem__text">
+											class="btn btn-link px-0 pt-2 d-flex flex-column align-items-center PlanNarrowNavSidebarItem__text text-dark">
 											<span
 												class="text-uppercase PlanNarrowNavSidebarItem__dateLabelWord">Feb</span>
 											<span class="PlanNarrowNavSidebarItem__dateLabelNumber">1</span>
@@ -91,15 +101,120 @@
 							<div class="row">
 								<div class="col-md-6"><i class="fas fa-calendar-alt"></i>&nbsp;&nbsp; 3/1</div>
 								<div class="col-md-6 text-right">
-									<i class="fa fa-user-circle font-30 text-dark" data-toggle="tooltip"
+									<i class="fa fa-user-circle font-30  text-dark" data-toggle="tooltip"
 										data-placement="top" title="Tooltip on top"></i>
-									<i class="fa fa-user-plus font-25 text-secondary ml-12"></i>
+									<i class="fa fa-user-plus font-30  text-secondary ml-12"></i>
 								</div>
 							</div>
 						</div>
 						<section class="sec-space-top  pb-5 bg-gray">
 							<div class="page-section container">
-								<h1>Slider here</h1>
+								<div class="row">
+									<div class="col-6">
+										<h3 class="mb-3">Explore</h3>
+									</div>
+									<div class="col-6 text-right mtt-5">
+										<a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2"
+											role="button" data-slide="prev">
+											<i class="fa fa-arrow-left"></i>
+										</a>
+										<a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2"
+											role="button" data-slide="next">
+											<i class="fa fa-arrow-right"></i>
+										</a>
+									</div>
+									<div class="col-12">
+										<div id="carouselExampleIndicators2" class="carousel slide"
+											data-ride="carousel">
+											<div class="carousel-inner">
+												<div class="carousel-item active">
+													<div class="row">
+														<div class="col-md-4 col-sm-4 col-xs-6 mb-3 left-right-10">
+															<div class="card">
+																<img class="img-fluid bod-radius-10" alt="100%x280"
+																	src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+																<div class="card-body">
+																	<h4 class="card-title-travel">Special title
+																		treatment</h4>
+																	<p class="card-text">With supporting text below as
+																		natural.</p>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-4  col-sm-4 col-xs-6 mb-3 left-right-10">
+															<div class="card">
+																<img class="img-fluid bod-radius-10" alt="100%x280"
+																	src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+																<div class="card-body">
+																	<h4 class="card-title-travel">Special title
+																		treatment</h4>
+																	<p class="card-text">With supporting text below as
+																		natural.</p>
+
+																</div>
+															</div>
+														</div>
+														<div class="col-md-4 col-sm-4 col-xs-6 mb-3 left-right-10">
+															<div class="card">
+																<img class="img-fluid bod-radius-10" alt="100%x280"
+																	src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+																<div class="card-body">
+																	<h4 class="card-title-travel">Special title
+																		treatment</h4>
+																	<p class="card-text">With supporting text below as
+																		natural.</p>
+
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="carousel-item">
+													<div class="row">
+														<div class="col-md-4 col-sm-4 col-xs-6 mb-3 left-right-10">
+															<div class="card">
+																<img class="img-fluid bod-radius-10" alt="100%x280"
+																	src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+																<div class="card-body">
+																	<h4 class="card-title-travel">Special title
+																		treatment</h4>
+																	<p class="card-text">With supporting text below as
+																		natural.</p>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-4  col-sm-4 col-xs-6 mb-3 left-right-10">
+															<div class="card">
+																<img class="img-fluid bod-radius-10" alt="100%x280"
+																	src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+																<div class="card-body">
+																	<h4 class="card-title-travel">Special title
+																		treatment</h4>
+																	<p class="card-text">With supporting text below as
+																		natural.</p>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-4 col-sm-4 col-xs-6 mb-3 left-right-10">
+															<div class="card">
+																<img class="img-fluid bod-radius-10" alt="100%x280"
+																	src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+																<div class="card-body">
+																	<h4 class="card-title-travel">Special title
+																		treatment</h4>
+																	<p class="card-text">With supporting text below as
+																		natural.</p>
+
+																</div>
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</section>
 					</div>
@@ -108,12 +223,13 @@
 						<div class="container">
 							<div class="ptb-30">
 								<div class="row no-gutters d-print-none">
-									<div class="col-sm-8">
+									<div class="col-lg-8 col-md-8 col-sm-12">
 										<div class="AddReservationButtons d-print-none p-3 h-100">
 											<span class="font-weight-bold font-size-16 text-dark">Reservations and
 												attachments</span>
 											<div class="d-flex align-items-baseline mt-2">
-												<div (click)="openDialog()" role="button" tabindex="0" class="flex-column align-items-center">
+												<div data-toggle="modal" data-target="#openflightmodal" tabindex="0"
+													class="flex-column align-items-center cursor">
 													<span
 														class="d-flex justify-content-center align-items-center mt-1 text-dark">
 														<i class="fa fa-fighter-jet"></i>
@@ -158,8 +274,8 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-sm-4">
-										<div class="PlanBoard__budgetSnapshot ml-sm-3 mt-2 mt-sm-0 align-items-stretch">
+									<div class="col-md-4 col-lg-4 col-sm-12">
+										<div class="PlanBoard__budgetSnapshot ml-sm-3 mt-sm-0 align-items-stretch">
 											<div class="BudgetSnapshot p-3 h-100">
 												<div class="font-weight-bold pb-1 ">Budgeting</div>
 												<div class="text-secondary font-size-24">$0.00</div>
@@ -169,7 +285,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-md-3 col-sm-4 col-xs-4 pt-30 ">
+									<div class="col-md-5 col-sm-12 col-xs-12 pt-30 ">
 										<button type="submit" class="primary-btn-small theme-btn"><i
 												class="fa fa-plus"></i>&nbsp;&nbsp; New List</button>
 									</div>
@@ -182,20 +298,22 @@
 						<div class="container">
 							<div class="ptb-30">
 								<div class="row page-section ">
-									<div class="col-md-9 col-sm-8 col-xs-8">
+									<div class="col-lg-9 col-md-6 col-sm-6 col-xs-6">
 										<h4 class="itinerary-text">Itinerary</h4>
 									</div>
-									<div class="col-md-3 col-sm-4 col-xs-4 padding-0">
-										<button type="submit" class="secondary-btn-small"><i class="fa fa-calendar" aria-hidden="true"></i>
+									<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 padding-0">
+										<button type="submit" class="secondary-btn-small"><i class="fa fa-calendar"
+												aria-hidden="true"></i>
 											&nbsp; 2/1 - 2/2</button>
+
 									</div>
 								</div>
 								<div class="page-section row pt-10">
-									<div class="col-md-9 col-sm-8 col-xs-8">
+									<div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
 										<h5><strong>Tuesday, February 1st</strong></h5>
 										<!-- <h5>Sub Heading</h5> -->
 									</div>
-									<div class="col-md-3 col-sm-4 col-xs-4 padding-0" align="right">
+									<div class="col-md-4 col-sm-4 col-xs-6 padding-0" align="right">
 										<div class="right">
 											<div class="dropdown">
 												<button class="btn btn-light dropdown-toggle" type="button"
@@ -231,7 +349,8 @@
 													</div>
 													<div class="col-md-1 col-sm-1 col-xs-1">
 														<button class="btn btn-outline-danger"
-															(click)="removePlacesValue(i)"><i class="fa fa-trash" aria-hidden="true"></i>
+															(click)="removePlacesValue(i)"><i class="fa fa-trash"
+																aria-hidden="true"></i>
 														</button>
 													</div>
 												</div>
@@ -239,50 +358,43 @@
 										</div>
 
 										<div class="page-section row pt-10">
-											<div class="col-md-10">
+											<div class="col-md-10 col-sm-8 col-xs-8">
 												<form class="example-form">
 													<mat-form-field class="example-full-width" appearance="fill">
 														<mat-label>Add Places</mat-label>
-														<input type="text" placeholder="Pick one" aria-label="Number"
-															matInput [formControl]="myControl" [matAutocomplete]="auto"
-															[(ngModel)]="destination" (ngModelChange)="change()">
-														<mat-autocomplete #auto="matAutocomplete"
-															(optionSelected)='onSelectPlace($event.option.value)'>
-															<mat-option *ngFor="let option of filteredOptions | async"
-																[value]="option">
+														<input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="destination" (ngModelChange)="change()">
+														<mat-autocomplete #auto="matAutocomplete" (optionSelected)='onSelectPlace($event.option.value)'>
+															<mat-option *ngFor="let option of filteredOptions | async" [value]="option">
 																{{option}}
 															</mat-option>
 														</mat-autocomplete>
 													</mat-form-field>
 												</form>
-
 											</div>
 											<div class="col-md-2 col-sm-4 col-xs-4 padding-0">
-												<button class="btn-web" mat-raised-button color="primary"
-													(click)="addvalue()">Note</button>
+												<button class="btn-web" mat-raised-button color="primary" (click)="addvalue()">Note</button>
 											</div>
 										</div>
 
 										<div class="page-section">
-											<div class="row" *ngFor="let value of values; let i = index">
+											<div class="row mt-2" *ngFor="let value of values; let i = index">
 												<div class="col-md-10 col-sm-8 col-xs-8">
-													<input class="input-field" type="text" [(ngModel)]="value.value"
-														#name="ngModel" name="value{{i}}">
+													<input class="input-field" type="text" [(ngModel)]="value.value" #name="ngModel" name="value{{i}}">
 												</div>
 												<div class="col-md-2 col-sm-4 col-xs-4 padding-0">
-													<button class="note-btn" mat-icon-button color="primary"
-														aria-label="Example icon button with a home icon"
-														(click)="removevalue(i)">
-														<mat-icon>Delete</mat-icon>
+													<button class="note-btn" mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="removevalue(i)">
+														<button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>
+														</button>
 													</button>
 												</div>
 
 											</div>
 										</div>
-										
+
 										<div class="page-section mtt-5">
-											<p class="text-dark"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>&nbsp;&nbsp;
- 												Recommonded Places</p>
+											<p class="text-dark"><i class="fa fa-arrow-circle-o-right"
+													aria-hidden="true"></i>&nbsp;&nbsp;
+												Recommonded Places</p>
 										</div>
 									</div>
 								</div>
@@ -303,9 +415,10 @@
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
-			<div class="col-md-6 padding-0 travel-map">
+			<div class="col-md-6 col-md-4 col-sm-12  col-xs-12 padding-0 travel-map">
 				<div class="map-wrapper3">
 					<section>
 						<agm-map [zoom]="5" [latitude]="lat" [longitude]="lng" [style.height]="mapHeight"
@@ -368,11 +481,148 @@
 						</agm-map>
 					</section>
 				</div>
-
 			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			</div>
+
 		</div>
 	</div>
 </section>
 
 
 <!-- / Blog Ends -->
+
+<!-- Flight Modal Start Here -->
+<div class="modal fade" id="openflightmodal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content flight-content">
+			<div class="modal-header flight-header text-center">
+				<div class="col-lg-12 col-md-12 text-center">
+					<h5 class="modal-title" id="exampleModalLabel"><strong>Add your flights</strong></h5>
+
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body flight-body">
+				<div class="col-lg-12 col-md-12 text-center">
+					<p>Import your reservation details to your plan by forwarding your email. Or have it automatically
+						synced by connecting your Gmail.</p>
+					<button type="button" class="btn btn-secondary btn-lg btn-block flight-btn"><i class="fa fa-print"
+							aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Forward Email</button>
+					<div class="d-flex align-items-center my-3">
+						<hr class="col">
+						<div class="ImportEmailsModalInner__or col-auto font-weight-bold">or</div>
+						<hr class="col">
+					</div>
+
+					<form>
+						<div class="form-group">
+							<mat-form-field class="example-full-width mb-17" appearance="fill">
+								<mat-label>Airlines</mat-label>
+								<input matInput placeholder="Airlines">
+							</mat-form-field>
+						</div>
+						<div class="form-group">
+							<mat-form-field class="example-full-width mb-17" appearance="fill">
+								<mat-label>Flight Number</mat-label>
+								<input matInput placeholder="Flight Number">
+							</mat-form-field>
+						</div>
+						<div class="form-group">
+							<mat-form-field appearance="fill" class="w-100">
+								<mat-label>Enter a date range</mat-label>
+								<mat-date-range-input [rangePicker]="picker">
+									<input matStartDate placeholder="Start date">
+									<input matEndDate placeholder="End date">
+								</mat-date-range-input>
+								<mat-datepicker-toggle matSuffix [for]="picker" style="z-index: +9999;">
+								</mat-datepicker-toggle>
+								<mat-date-range-picker #picker></mat-date-range-picker>
+							</mat-form-field>
+						</div>
+						<p>Sorry, we can't get data for flights in the past</p>
+						<h6 class="text-primary text center">Enter Flight details Manually</h6>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--full page modal of map-->
+<div class="modal fade modal-fullscreen  footer-to-bottom" id="myModalFullscreen" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog animated fadeInDown">
+		<div class="modal-content">
+			<!-- <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div> -->
+			<div class="modal-body">
+				<agm-map [zoom]="5" [latitude]="lat" [longitude]="lng" [style.height]="mapHeight" [scrollwheel]="false">
+					<agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng">
+						<agm-info-window [isOpen]="true">
+							<div class="text-center" style="width: 400px">
+								<div class="col-md-12">
+									<h6 class="font-weight-900"><i
+											class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;{{marker.label}}</h6>
+									<div><span>{{marker.summary}}</span></div>
+									<div class="mtt-5">
+										<span
+											class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Monument</span>
+										<span
+											class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Points
+											of
+											Interest &amp; Landmarks</span>
+										<span
+											class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Sights
+											&amp; Landmarks</span>
+										<span
+											class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Historical
+											place</span>
+									</div>
+									<div class="mtt-5">
+										<span class="text-warning"><i class="fas fa-star"></i>&nbsp; 4.5</span>
+									</div>
+									<div class="mtt-5">
+										<span class="text-secondary"><i
+												class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;<span>Charminar
+												Rd,
+												Char Kaman, Ghansi
+												Bazaar, Hyderabad, Telangana 500002, India</span></span>
+									</div>
+									<div class="mtt-5">
+										<span class="text-secondary"><i class="far fa-clock"></i>&nbsp;&nbsp;
+											Tuesday: 9AM –
+											5:30PM</span>
+									</div>
+									<div class="mtt-5">
+										<span class="text-secondary"><i class="fas fa-hourglass-half"></i>&nbsp;&nbsp;
+											People
+											typically spend 20 min here</span>
+									</div>
+									<div class="mtt-5">
+										<span class="text-secondary"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;<a
+												href="" class="text-web">+91 40 6674 5986</a></span>
+									</div>
+									<div class="mtt-5">
+										<span class="text-secondary"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp;
+											<a href="" class="text-web">www.almostindia.com</a></span>
+									</div>
+								</div>
+							</div>
+						</agm-info-window>
+					</agm-marker>
+				</agm-map>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
