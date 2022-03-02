@@ -8,6 +8,7 @@ declare var google: any;
 
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
+import { formatDate } from '@angular/common';
 // import {MatChipInputEvent} from '@angular/material';
 
 export interface Fruit {
@@ -28,6 +29,8 @@ export class HomeComponent implements OnInit {
   resp: any;
   campaignOne!: FormGroup;
   datee: any;
+  Val_startDate = "";
+  Val_endDate = "";
 
 
 
@@ -110,7 +113,6 @@ export class HomeComponent implements OnInit {
     }
   }
   getPlan() {
-
     const myId = uuidv4();
     console.log(myId)
     if (this.startDate != null || this.startDate != undefined || this.startDate != '' ||

@@ -48,16 +48,10 @@
 
 							</div>
 						</div>
-						<!-- <button class="btn btn-secondary" data-toggle="modal" data-target="#myModalFullscreen" contenteditable="false"><i class="fa fa-map" aria-hidden="true"></i>
-						</button> -->
-
 					</nav>
 
 					<div class="sidebar">
 						<div class="logo_content">
-							<div class="logo">
-								<div class="logo_name">Code4education</div>
-							</div>
 							<i class='bx bx-menu' id="btn"></i>
 						</div>
 						<ul class="nav_list">
@@ -65,16 +59,17 @@
 								<li>
 									<a class="navigation__link" href="#travel"><i class="fa fa-calendar"></i> </a>
 								</li>
-								<li>
+								<li *ngFor="let item of dates">
 									<div class="d-flex flex-column-date">
 										<button type="button"
 											class="btn btn-link px-0 pt-2 d-flex flex-column align-items-center PlanNarrowNavSidebarItem__text text-dark">
 											<span
-												class="text-uppercase PlanNarrowNavSidebarItem__dateLabelWord">Feb</span>
-											<span class="PlanNarrowNavSidebarItem__dateLabelNumber">1</span>
+												class="text-uppercase PlanNarrowNavSidebarItem__dateLabelWord"
+												>{{ item.month }}</span>
+											<span class="PlanNarrowNavSidebarItem__dateLabelNumber">{{ item.date }}</span>
 										</button>
 									</div>
-									<span class="tooltip">05 Feb, Thrusday</span>
+									<span class="tooltip">{{ item.date +" "+ item.month }}</span>
 								</li>
 							</nav>
 						</ul>
@@ -285,10 +280,6 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-md-5 col-sm-12 col-xs-12 pt-30 ">
-										<button type="submit" class="primary-btn-small theme-btn"><i
-												class="fa fa-plus"></i>&nbsp;&nbsp; New List</button>
-									</div>
 								</div>
 
 							</div>
@@ -313,21 +304,7 @@
 										<h5><strong>Tuesday, February 1st</strong></h5>
 										<!-- <h5>Sub Heading</h5> -->
 									</div>
-									<div class="col-md-4 col-sm-4 col-xs-6 padding-0" align="right">
-										<div class="right">
-											<div class="dropdown">
-												<button class="btn btn-light dropdown-toggle" type="button"
-													id="dropdownMenuButton" data-toggle="dropdown"
-													aria-expanded="false">
-													<i class="fa fa-ellipsis-h"></i>
-												</button>
-												<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-													<a class="dropdown-item" href="#">Delete</a>
-													<a class="dropdown-item" href="#">Deselect All</a>
-												</div>
-											</div>
-										</div>
-									</div>
+									<div class="col-md-4 col-sm-4 col-xs-6 padding-0" align="right"></div>
 								</div>
 								<div class="row  pt-10">
 
@@ -348,10 +325,10 @@
 															class="explore-img">
 													</div>
 													<div class="col-md-1 col-sm-1 col-xs-1">
-														<button class="btn btn-outline-danger"
+														<!-- <button class="btn btn-outline-danger"
 															(click)="removePlacesValue(i)"><i class="fa fa-trash"
 																aria-hidden="true"></i>
-														</button>
+														</button> -->
 													</div>
 												</div>
 											</div>
@@ -359,7 +336,7 @@
 
 										<div class="page-section row pt-10">
 											<div class="col-md-10 col-sm-8 col-xs-8">
-												<form class="example-form">
+												<!-- <form class="example-form">
 													<mat-form-field class="example-full-width" appearance="fill">
 														<mat-label>Add Places</mat-label>
 														<input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="destination" (ngModelChange)="change()">
@@ -369,7 +346,8 @@
 															</mat-option>
 														</mat-autocomplete>
 													</mat-form-field>
-												</form>
+												</form> -->
+												
 											</div>
 											<div class="col-md-2 col-sm-4 col-xs-4 padding-0">
 												<button class="btn-web" mat-raised-button color="primary" (click)="addvalue()">Note</button>
@@ -449,10 +427,7 @@
 											</div>
 											<div class="mtt-5">
 												<span class="text-secondary"><i
-														class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;<span>Charminar
-														Rd,
-														Char Kaman, Ghansi
-														Bazaar, Hyderabad, Telangana 500002, India</span></span>
+														class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;<span><span>{{marker.formatted_address}}</span></span></span>
 											</div>
 											<div class="mtt-5">
 												<span class="text-secondary"><i class="far fa-clock"></i>&nbsp;&nbsp;

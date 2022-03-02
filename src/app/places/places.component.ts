@@ -1,3 +1,5 @@
+import { formatDate } from '@angular/common';
+import { ConditionalExpr } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -28,8 +30,10 @@ export class PlacesComponent implements OnInit {
   destination = "";
   Addplaces: any = [];
   range: any;
-
-
+  startDate: any;
+  endDate: any;
+  datasource_dates: any;
+  dates: any
 
 
   constructor(private route: ActivatedRoute, private router: Router) {
@@ -51,12 +55,27 @@ export class PlacesComponent implements OnInit {
       end: new FormControl(new Date(year, month, 19)),
     });
   }
+
   markers: any[] = [];
   ngOnInit(): void {
     const p: any = localStorage.getItem('plan')
     this.data = JSON.parse(p)
     console.log(this.data)
     const placesInfo = this.data.placesInfo
+
+    this.startDate = this.data.startDate
+    this.endDate = this.data.endDate
+    console.log(this.startDate);
+
+    var date1 = formatDate(new Date(this.startDate), 'yyyy-MM-dd', 'en_US')
+    var date2 = formatDate(new Date(this.endDate), 'yyyy-MM-dd', 'en_US')
+    // var date_range = date1 + "-" + date2;
+    // alert(date_range)
+
+    this.dates = this.dateRange(date1, date2);
+    console.log(this.dates)
+    //  alert(this.dates[1].month)
+    // this.datasource_dates=JSON.parse(JSON.stringify(dates))
 
     for (let i = 0; i < placesInfo.length; i++) {
       this.place_id = placesInfo[i].place_id
@@ -65,11 +84,10 @@ export class PlacesComponent implements OnInit {
         lng: placesInfo[i].location.lng,
         label: placesInfo[i].formatted_address,
         summary: placesInfo[i].summary,
+        // formatted_address: placesInfo[i]?.format_address,
       }
       this.markers.push(mar)
     }
-
-
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map((value: string) => this._filter(value)),
@@ -94,13 +112,13 @@ export class PlacesComponent implements OnInit {
   //* note section end here*//
 
   //* Add Places section start here*//
-  removePlacesValue(i: number) {
-    this.Addplaces.splice(i, 1);
-  }
+  // removePlacesValue(i: number) {
+  //   this.Addplaces.splice(i, 1);
+  // }
 
-  addPlacesValue() {
-    this.Addplaces.push({ value: "" });
-  }
+  // addPlacesValue() {
+  //   this.Addplaces.push({ value: "" });
+  // }
   //* Add Places section end here*//
 
   //* Add Places dropdown section here*//
@@ -114,17 +132,32 @@ export class PlacesComponent implements OnInit {
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
-  onSelectPlace(data: any) {
-    // alert(data)
-  }
-  change() {
-    if (this.destination.trim() != "" && this.destination != null) {
-      alert(this.destination)
-      this.addPlacesValue();
+
+
+  dateRange(startDate: any, endDate: any, steps = 1) {
+    const dateArray = [];
+    let currentDate = new Date(startDate);
+    var converted_dates;
+    var date;
+    var month;
+    while (currentDate <= new Date(endDate)) {
+      converted_dates = formatDate(new Date(currentDate), 'dd-MMM', 'en_US')
+      dateArray.push(converted_dates);
+      currentDate.setUTCDate(currentDate.getUTCDate() + steps);
     }
+    var dateArray1 = new Array();
+    for (var i in dateArray) {
+      // var jsonObj = new Object();
+      // jsonObj.date = dateArray[i];
+      date = dateArray[i].split("-")[0]
+      month = dateArray[i].split("-")[1].toString();
+      //alert(dateArray[i])
+      // alert(temp1)
+      // alert(temp2)
+      dateArray1.push({ date, month });
+    }
+    return dateArray1;
   }
-
-
 }
 
 
