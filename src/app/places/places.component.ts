@@ -39,6 +39,7 @@ export class PlacesComponent implements OnInit {
   server: any;
   addresses: any;
   place_ids: any = [];
+  
 
 
   constructor(private route: ActivatedRoute, private router: Router) {
@@ -106,39 +107,6 @@ export class PlacesComponent implements OnInit {
   onSelectionChanged(e: any) {
     console.log(e)
   }
-  searchh() {
-    this.server.getPlacesSuggestions(this.destination).subscribe((data: any) => {
-      console.log(data)
-      this.addresses = data;
-    })
-  }
-  displayFn(address: any) {
-    if (address) {
-
-      return address.description;
-    }
-  }
-  onSelectPlace(address: any) {
-    console.log(address)
-    if (this.place_ids.length == 0) {
-      this.place_ids.push(address.place_id);
-    } else {
-      if (this.place_ids.includes(address.place_id)) {
-        console.log('found');
-        // this.place_ids.splice(this.place_ids.indexOf(id), 1);
-      } else {
-        console.log('not found');
-        this.place_ids.push(address.place_id);
-      }
-    }
-    console.log(this.place_ids);
-  }
-  y(address: any) {
-    if (this.place_ids.includes(address.place_id)) {
-      console.log('found');
-      this.place_ids.splice(this.place_ids.indexOf(address.place_id), 1);
-    }
-  }
   public mapReadyHandler(map: any) {
     console.log(map)
     map.addListener('click', (e: any) => {
@@ -202,6 +170,47 @@ export class PlacesComponent implements OnInit {
       dateArray1.push({ date, month });
     }
     return dateArray1;
+  }
+
+
+
+  Navigate1() {
+    this.router.navigateByUrl("exploreplaces");
+  }
+
+  searchh() {
+    this.server.getPlacesSuggestions(this.destination).subscribe((data: any) => {
+      console.log(data)
+      this.addresses = data;
+    })
+  }
+  displayFn(address: any) {
+    if (address) {
+
+      return address.description;
+    }
+  }
+
+  onSelectPlace(address: any) {
+    console.log(address)
+    if (this.place_ids.length == 0) {
+      this.place_ids.push(address.place_id);
+    } else {
+      if (this.place_ids.includes(address.place_id)) {
+        console.log('found');
+        // this.place_ids.splice(this.place_ids.indexOf(id), 1);
+      } else {
+        console.log('not found');
+        this.place_ids.push(address.place_id);
+      }
+    }
+    console.log(this.place_ids);
+  }
+  y(address: any) {
+    if (this.place_ids.includes(address.place_id)) {
+      console.log('found');
+      this.place_ids.splice(this.place_ids.indexOf(address.place_id), 1);
+    }
   }
 }
 

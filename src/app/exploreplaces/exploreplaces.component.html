@@ -2,18 +2,14 @@
 <section class="light-bg">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 padding-0">
-                <div class="home_content left-0">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-fixed">
-                        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button> -->
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                <div class="home_content left-0" style="width: calc(100% - 0px); z-index:3;">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-fixed"
+                        style="width: calc(50% - 0px);">
+                        <div class="navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <i class="fa fa-arrow-left"></i>
+                                    <i (click)="backplace()" class="fa fa-arrow-left"></i>
                                 </li>
                             </ul>
                             <div class="">
@@ -42,8 +38,7 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-12">
                                         <h4>48 Hours in Delhi: The Perfect Itinerary</h4>
-                                        <button type="button" class="btn btn-explore">Read more on
-                                            tripsavvy.com</button>
+                                        <a target="_blank" href="https://www.fodors.com/world/asia/india/delhi/things-to-do/sights" type="button" class="btn btn-explore">Read more on fodors.com</a>
                                     </div>
                                 </div>
                                 <div class="row pt-30">
@@ -68,16 +63,9 @@
                                     </div>
                                     <div class="col-md-3 col-lg-3" align="right">
                                         <div class="dropdown">
-                                            <button class="dark-btn-small dropdown-toggle" type="button"
-                                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
+                                            <button class="dark-btn-small" type="button">
                                                 <i class="fa fa-bookmark"></i>&nbsp;&nbsp;Add to Trip
                                             </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="row ptb-10">
@@ -106,57 +94,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 padding-0 travel-map">
-            <!-- <agm-map>
-				<agm-marker (mapReady)="mapReadyHandler($event)" [latitude]="lat" [longitude]="lng"></agm-marker>
-			</agm-map> -->
-            <div class="map-card">
-                <div class="alert alert-light alert-dismissible fade show" role="alert">
-                    <div class="col-md-12">
-                        <h6 class="font-weight-900"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Charminar</h6>
-                        <div><span>Iconic 16th-century mosque with 4 grand arches, 48m tall minarets and views over the
-                                Laad Bazaar.</span></div>
-                        <div class="mtt-5">
-                            <span
-                                class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Monument</span>
-                            <span class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Points of
-                                Interest &amp; Landmarks</span>
-                            <span class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Sights
-                                &amp; Landmarks</span>
-                            <span
-                                class="badge badge-lightGray Badge__lightGray text-nowrap Badge__badge mr-1">Historical
-                                place</span>
-                        </div>
-                        <div class="mtt-5">
-                            <span class="text-warning"><i class="fas fa-star"></i>&nbsp; 4.5</span>
-                        </div>
-                        <div class="mtt-5">
-                            <span class="text-secondary"><i
-                                    class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;<span>Charminar Rd, Char Kaman, Ghansi
-                                    Bazaar, Hyderabad, Telangana 500002, India</span></span>
-                        </div>
-                        <div class="mtt-5">
-                            <span class="text-secondary"><i class="far fa-clock"></i>&nbsp;&nbsp; Tuesday: 9AM –
-                                5:30PM</span>
-                        </div>
-                        <div class="mtt-5">
-                            <span class="text-secondary"><i class="fas fa-hourglass-half"></i>&nbsp;&nbsp; People
-                                typically spend 20 min here</span>
-                        </div>
-                        <div class="mtt-5">
-                            <span class="text-secondary"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;<a href=""
-                                    class="text-web">+91 40 6674 5986</a></span>
-                        </div>
-                        <div class="mtt-5">
-                            <span class="text-secondary"><i class="fas fa-globe-americas"></i>&nbsp;&nbsp; <a href=""
-                                    class="text-web">www.almostindia.com</a></span>
-                        </div>
-                    </div>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
+        <div class="col-md-6 col-md-4 col-sm-12 col-xs-12 padding-0 travel-map">
+            <agm-map [latitude]='lat' [longitude]='long' [zoom]='zoom'>
+                <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng">
+                    <agm-info-window #infoWindow>
+                        {{ marker.label }}
+                    </agm-info-window>
+                </agm-marker>
+            </agm-map>
         </div>
     </div>
 </section>

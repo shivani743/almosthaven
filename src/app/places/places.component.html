@@ -118,7 +118,11 @@
 										</a>
 									</div>
 									<div class="col-4 text-right mtt-5">
-										<button (click)="$event.preventDefault()" routerLink="exploreplaces" class="primary-btn-small theme-btn">Browse All</button>
+										<!-- <button routerLink="exploreplaces" class="primary-btn-small theme-btn">Browse
+											All</button> -->
+
+											<button (click)="Navigate1()" class="primary-btn-small theme-btn">Browse
+												All</button>
 									</div>
 									<div class="col-12">
 										<div id="carouselExampleIndicators2" class="carousel slide"
@@ -338,26 +342,10 @@
 
 										<div class="page-section row pt-10">
 											<div class="col-md-10 col-sm-8 col-xs-8">
-												<!-- <form class="example-form">
-													<mat-form-field class="example-full-width" appearance="fill">
-														<mat-label>Add Places</mat-label>
-														<input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="destination" (ngModelChange)="change()">
-														<mat-autocomplete #auto="matAutocomplete" (optionSelected)='onSelectPlace($event.option.value)'>
-															<mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-																{{option}}
-															</mat-option>
-														</mat-autocomplete>
-													</mat-form-field>
-												</form> -->
 												<mat-form-field class="example-full-width" appearance="fill">
-													<input matInput type="text" name="destination"
-														[(ngModel)]="destination" (ngModelChange)="change()"
-														[matAutocomplete]="auto"
-														placeholder="Where to? eg: London, Paris">
-													<mat-autocomplete [displayWith]="displayFn"
-														(optionSelected)='onSelectPlace($event.option.value)'
-														#auto="matAutocomplete" class="address-list">
-														<mat-option *ngFor="let address of addresses" [value]="address">
+													<input matInput type="text" name="destination" [(ngModel)]="destination" (ngModelChange)="change()" [matAutocomplete]="auto" placeholder="Where to? eg: London, Paris">
+													<mat-autocomplete [displayWith]="displayFn" (optionSelected)='onSelectPlace($event.option.value)'  #auto="matAutocomplete" class="address-list">
+														<mat-option  *ngFor="let address of addresses" [value]="address" >
 															{{ address.description }}
 														</mat-option>
 													</mat-autocomplete>
