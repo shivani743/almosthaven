@@ -281,7 +281,9 @@
 												<div class="font-weight-bold pb-1 ">Budgeting</div>
 												<div class="text-secondary font-size-24">$0.00</div>
 												<div>
-													<h6><a href="#budget">View details</a></h6>
+													<h6><a (click)="goDown1()">View details</a></h6>
+													<!-- <button (click)="goDown1()">Scroll to Red DIV</button> -->
+
 												</div>
 											</div>
 										</div>
@@ -295,10 +297,10 @@
 						<div class="container">
 							<div class="ptb-30">
 								<div class="row page-section ">
-									<div class="col-lg-9 col-md-6 col-sm-6 col-xs-6">
+									<div class="col-lg-9 col-md-6 col-sm-3 col-xs-12">
 										<h4 class="itinerary-text">Itinerary</h4>
 									</div>
-									<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 padding-0">
+									<div class="col-lg-3 col-md-6 col-sm-9 col-xs-12 padding-0">
 										<button type="submit" class="secondary-btn-small"><i class="fa fa-calendar"
 												aria-hidden="true"></i>
 											&nbsp; 2/1 - 2/2</button>
@@ -350,11 +352,9 @@
 														</mat-option>
 													</mat-autocomplete>
 												</mat-form-field>
-
 											</div>
 											<div class="col-md-2 col-sm-4 col-xs-4 padding-0">
-												<button class="btn-web" mat-raised-button color="primary"
-													(click)="addvalue()">Note</button>
+												<button class="btn-web" mat-raised-button color="primary" (click)="addvalue()">Note</button>
 											</div>
 										</div>
 
@@ -389,7 +389,7 @@
 					</div>
 
 
-					<div class="" id="budget">
+					<div class="" id="targetRed">
 						<div class="container">
 							<div class="ptb-30">
 								<div class="row page-section ">
@@ -460,14 +460,13 @@
 			<div class="col-md-6 col-md-4 col-sm-12  col-xs-12 padding-0 travel-map">
 				<div class="map-wrapper3">
 					<section>
-						<agm-map [zoom]="5" [latitude]="lat" [longitude]="lng" [style.height]="mapHeight"
-							[scrollwheel]="false">
+						<agm-map [latitude]="lat" [longitude]="lng">
 							<agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng">
 								<agm-info-window [isOpen]="true">
 									<div class="text-center" style="width: 400px">
 										<div class="col-md-12">
 											<h6 class="font-weight-900"><i
-													class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;{{marker.label}}</h6>
+													class="fa fa-map-marker-alt"></i>&nbsp;&nbsp;{{marker.label}}</h6>
 											<div><span>{{marker.summary}}</span></div>
 											<div class="mtt-5">
 												<span
@@ -484,11 +483,11 @@
 													place</span>
 											</div>
 											<div class="mtt-5">
-												<span class="text-warning"><i class="fas fa-star"></i>&nbsp; 4.5</span>
+												<span class="text-warning"><i class="fa fa-star"></i>&nbsp; 4.5</span>
 											</div>
 											<div class="mtt-5">
 												<span class="text-secondary"><i
-														class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;<span><span>{{marker.formatted_address}}</span></span></span>
+														class="fa fa-map-pin"></i>&nbsp;&nbsp;<span><span>{{marker.placeaddress}}</span></span></span>
 											</div>
 											<div class="mtt-5">
 												<span class="text-secondary"><i class="far fa-clock"></i>&nbsp;&nbsp;
@@ -497,17 +496,17 @@
 											</div>
 											<div class="mtt-5">
 												<span class="text-secondary"><i
-														class="fas fa-hourglass-half"></i>&nbsp;&nbsp; People
+														class="fa fa-hourglass-half"></i>&nbsp;&nbsp; People
 													typically spend 20 min here</span>
 											</div>
 											<div class="mtt-5">
 												<span class="text-secondary"><i
-														class="fas fa-phone-alt"></i>&nbsp;&nbsp;<a href=""
+														class="fa fa-phone"></i>&nbsp;&nbsp;<a href=""
 														class="text-web">+91 40 6674 5986</a></span>
 											</div>
 											<div class="mtt-5">
 												<span class="text-secondary"><i
-														class="fas fa-globe-americas"></i>&nbsp;&nbsp; <a href=""
+														class="fa fa-globe"></i>&nbsp;&nbsp; <a href=""
 														class="text-web">www.almostindia.com</a></span>
 											</div>
 										</div>
@@ -515,6 +514,7 @@
 								</agm-info-window>
 							</agm-marker>
 						</agm-map>
+						
 					</section>
 				</div>
 			</div>

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PlacesComponent } from './places/places.component';
 import { ExploreplacesComponent } from './exploreplaces/exploreplaces.component';
@@ -27,6 +27,10 @@ const routes: Routes = [
 
   },
 ];
+const routerOptions: ExtraOptions = {
+  anchorScrolling: "enabled"
+  //scrollPositionRestoration: "enabled"
+};
 
 
 @NgModule({

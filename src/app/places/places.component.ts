@@ -1,4 +1,4 @@
-import { formatDate } from '@angular/common';
+import { formatDate, ViewportScroller } from '@angular/common';
 import { ConditionalExpr } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
@@ -39,10 +39,11 @@ export class PlacesComponent implements OnInit {
   server: any;
   addresses: any;
   place_ids: any = [];
+  scroller: any;
   
 
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, scroller: ViewportScroller, private router: Router) {
 
     //     this.route.queryParams.subscribe(params => {
     //       this.data = params['data'];
@@ -80,8 +81,7 @@ export class PlacesComponent implements OnInit {
 
     this.dates = this.dateRange(date1, date2);
     console.log(this.dates)
-    //  alert(this.dates[1].month)
-    // this.datasource_dates=JSON.parse(JSON.stringify(dates))
+
 
     for (let i = 0; i < placesInfo.length; i++) {
       this.place_id = placesInfo[i].place_id
@@ -90,7 +90,7 @@ export class PlacesComponent implements OnInit {
         lng: placesInfo[i].location.lng,
         label: placesInfo[i].formatted_address,
         summary: placesInfo[i].summary,
-        // formatted_address: placesInfo[i]?.format_address,
+        formatted_address: placesInfo[i].placeaddress,
       }
       this.markers.push(mar)
     }
@@ -100,6 +100,11 @@ export class PlacesComponent implements OnInit {
     );
 
   }
+
+  goDown1() {
+    this.scroller.scrollToAnchor("targetRed");
+  }
+
 
   change() {
     this.searchh()
@@ -160,13 +165,8 @@ export class PlacesComponent implements OnInit {
     }
     var dateArray1 = new Array();
     for (var i in dateArray) {
-      // var jsonObj = new Object();
-      // jsonObj.date = dateArray[i];
       date = dateArray[i].split("-")[0]
       month = dateArray[i].split("-")[1].toString();
-      //alert(dateArray[i])
-      // alert(temp1)
-      // alert(temp2)
       dateArray1.push({ date, month });
     }
     return dateArray1;
@@ -177,6 +177,9 @@ export class PlacesComponent implements OnInit {
   Navigate1() {
     this.router.navigateByUrl("exploreplaces");
   }
+
+
+
 
   searchh() {
     this.server.getPlacesSuggestions(this.destination).subscribe((data: any) => {
