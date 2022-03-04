@@ -7593,7 +7593,7 @@ button.close {
 
 .sidebar ul li {
     position: relative;
-    height: 50px;
+    height: 45px;
     width: 100%;
     margin: 5px 0;
     list-style: none;
@@ -7670,13 +7670,14 @@ button.close {
 }
 
 .sidebar ul li a {
-    color: var(--white-color);
     display: flex;
     align-items: center;
     text-decoration: none;
     border-radius: 12px;
     white-space: nowrap;
     transition: all 0.4s ease;
+    background: #000;
+    color: #fff;
 }
 
 .sidebar ul li a:hover {
@@ -7686,10 +7687,10 @@ button.close {
 
 .sidebar ul li i {
     font-size: 18px;
-    height: 50px;
-    min-width: 30px;
+    height: 42px;
+    min-width: 34px;
     border-radius: 12px;
-    line-height: 50px;
+    line-height: 43px;
     text-align: center;
 }
 
@@ -8285,8 +8286,8 @@ a.waves-effect, a.waves-light {
 
 .PlanNarrowNavSidebarItem__text {
     color: #adadad;
-    ;
     padding-bottom: 4px;
+    font-size: 12px;
 }
 
 .PlanNarrowNavSidebarItem__dateLabelWord {
@@ -8351,4 +8352,27 @@ a.waves-effect, a.waves-light {
 }
 .mt-35{
     margin-top: -35px!important;
+}
+.font-size-36 {
+    font-size: 2.25rem;
+}
+.bod-left-black{
+    border-left: 1px solid #999;
+}
+
+#sidebar-scroll{
+    height: 700px;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+}
+#sidebar-scroll::-webkit-scrollbar {
+    width: 2px;
+}
+
+#sidebar-scroll::-webkit-scrollbar-track {
+    background: #ddd;
+}
+
+#sidebar-scroll::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
 }

@@ -50,7 +50,7 @@
 						</div>
 					</nav>
 
-					<div class="sidebar">
+					<div class="sidebar" id="sidebar-scroll">
 						<div class="logo_content">
 							<i class='bx bx-menu' id="btn"></i>
 						</div>
@@ -63,17 +63,16 @@
 									<div class="d-flex flex-column-date">
 										<button type="button"
 											class="btn btn-link px-0 pt-2 d-flex flex-column align-items-center PlanNarrowNavSidebarItem__text text-dark">
-											<span
-												class="text-uppercase PlanNarrowNavSidebarItem__dateLabelWord"
-												>{{ item.month }}</span>
-											<span class="PlanNarrowNavSidebarItem__dateLabelNumber">{{ item.date }}</span>
+											<span class="text-uppercase PlanNarrowNavSidebarItem__dateLabelWord">{{
+												item.month }}</span>
+											<span class="PlanNarrowNavSidebarItem__dateLabelNumber">{{ item.date
+												}}</span>
 										</button>
 									</div>
 									<span class="tooltip">{{ item.date +" "+ item.month }}</span>
 								</li>
 							</nav>
 						</ul>
-
 					</div>
 					<div class="page-section  padding-0" id="travel">
 						<div class="travel-images">
@@ -105,10 +104,10 @@
 						<section class="sec-space-top  pb-5 bg-gray">
 							<div class="page-section container">
 								<div class="row">
-									<div class="col-6">
+									<div class="col-4">
 										<h3 class="mb-3">Explore</h3>
 									</div>
-									<div class="col-6 text-right mtt-5">
+									<div class="col-4 text-right mtt-5">
 										<a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2"
 											role="button" data-slide="prev">
 											<i class="fa fa-arrow-left"></i>
@@ -117,6 +116,9 @@
 											role="button" data-slide="next">
 											<i class="fa fa-arrow-right"></i>
 										</a>
+									</div>
+									<div class="col-4 text-right mtt-5">
+										<button (click)="$event.preventDefault()" routerLink="exploreplaces" class="primary-btn-small theme-btn">Browse All</button>
 									</div>
 									<div class="col-12">
 										<div id="carouselExampleIndicators2" class="carousel slide"
@@ -275,7 +277,7 @@
 												<div class="font-weight-bold pb-1 ">Budgeting</div>
 												<div class="text-secondary font-size-24">$0.00</div>
 												<div>
-													<h6><span class="">View details</span></h6>
+													<h6><a href="#budget">View details</a></h6>
 												</div>
 											</div>
 										</div>
@@ -347,21 +349,39 @@
 														</mat-autocomplete>
 													</mat-form-field>
 												</form> -->
-												
+												<mat-form-field class="example-full-width" appearance="fill">
+													<input matInput type="text" name="destination"
+														[(ngModel)]="destination" (ngModelChange)="change()"
+														[matAutocomplete]="auto"
+														placeholder="Where to? eg: London, Paris">
+													<mat-autocomplete [displayWith]="displayFn"
+														(optionSelected)='onSelectPlace($event.option.value)'
+														#auto="matAutocomplete" class="address-list">
+														<mat-option *ngFor="let address of addresses" [value]="address">
+															{{ address.description }}
+														</mat-option>
+													</mat-autocomplete>
+												</mat-form-field>
+
 											</div>
 											<div class="col-md-2 col-sm-4 col-xs-4 padding-0">
-												<button class="btn-web" mat-raised-button color="primary" (click)="addvalue()">Note</button>
+												<button class="btn-web" mat-raised-button color="primary"
+													(click)="addvalue()">Note</button>
 											</div>
 										</div>
 
 										<div class="page-section">
 											<div class="row mt-2" *ngFor="let value of values; let i = index">
 												<div class="col-md-10 col-sm-8 col-xs-8">
-													<input class="input-field" type="text" [(ngModel)]="value.value" #name="ngModel" name="value{{i}}">
+													<input class="input-field" type="text" [(ngModel)]="value.value"
+														#name="ngModel" name="value{{i}}">
 												</div>
 												<div class="col-md-2 col-sm-4 col-xs-4 padding-0">
-													<button class="note-btn" mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="removevalue(i)">
-														<button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>
+													<button class="note-btn" mat-icon-button color="primary"
+														aria-label="Example icon button with a home icon"
+														(click)="removevalue(i)">
+														<button class="btn btn-danger"><i class="fa fa-trash"
+																aria-hidden="true"></i>
 														</button>
 													</button>
 												</div>
@@ -374,6 +394,59 @@
 													aria-hidden="true"></i>&nbsp;&nbsp;
 												Recommonded Places</p>
 										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="" id="budget">
+						<div class="container">
+							<div class="ptb-30">
+								<div class="row page-section ">
+									<div class="col-lg-9 col-md-6 col-sm-6 col-xs-6">
+										<h4 class="itinerary-text">Budgeting</h4>
+									</div>
+									<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 padding-0">
+										<!-- <button class="primary-btn-small theme-btn"><i
+												class="fa fa-plus"></i>&nbsp;&nbsp; Add Expense</button> -->
+									</div>
+								</div>
+								<div class="container mb-3">
+									<div class="row no-gutters d-print-none">
+										<div class="col-lg-12 col-md-12 col-sm-12">
+											<div class="AddReservationButtons d-print-none p-3 h-100">
+												<div class="row">
+													<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+														<p class="font-size-36 mb-1 text-dark">₹0.00</p>
+														<div class="Button__label flex-shrink-1 minw-0 cursor"
+															data-toggle="modal" data-target="#setbudget" tabindex="0">
+															<span class="Button__labelText flex-shrink-1 minw-0">
+																Set a budget
+															</span>
+														</div>
+													</div>
+													<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 bod-left-black">
+														<button mat-button><i
+																class="fa fa-user-plus"></i>&nbsp;&nbsp;Add
+															Tripmate</button>
+														<button mat-button><i
+																class="fa fa-cog"></i>&nbsp;&nbsp;Setting</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row page-section ">
+									<div class="col-lg-9 col-md-6 col-sm-6 col-xs-6">
+										<h5><strong>Expenses</strong></h5>
+										<p>You haven’t added any expenses yet.</p>
+									</div>
+									<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 padding-0">
+										<button class="secondary-btn-small"><i class="fa fa-credit-card"></i>
+											&nbsp;&nbsp; Debt Summery</button>
 									</div>
 								</div>
 							</div>
@@ -600,4 +673,31 @@
 		<!-- /.modal-content -->
 	</div>
 	<!-- /.modal-dialog -->
+</div>
+
+
+
+<!-- Set a budget Here -->
+<div class="modal fade" id="setbudget" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content flight-content">
+			<div class="modal-header flight-header text-center">
+				<div class="col-lg-12 col-md-12 text-center">
+					<h5 class="modal-title" id="exampleModalLabel"><strong>Set budget
+						</strong></h5>
+
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body flight-body">
+				<div class="col-lg-12 col-md-12 text-center">
+					<p>Import your reservation details to your plan by forwarding your email. Or have it automatically
+						synced by connecting your Gmail.</p>
+					<button class="primary-btn-small theme-btn col-lg-4 text-center">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

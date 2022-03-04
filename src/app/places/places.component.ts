@@ -6,6 +6,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, startWith } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+declare var google: any;
+
 
 @Component({
   selector: 'app-places',
@@ -34,6 +36,9 @@ export class PlacesComponent implements OnInit {
   endDate: any;
   datasource_dates: any;
   dates: any
+  server: any;
+  addresses: any;
+  place_ids: any = [];
 
 
   constructor(private route: ActivatedRoute, private router: Router) {
@@ -93,6 +98,46 @@ export class PlacesComponent implements OnInit {
       map((value: string) => this._filter(value)),
     );
 
+  }
+
+  change() {
+    this.searchh()
+  }
+  onSelectionChanged(e: any) {
+    console.log(e)
+  }
+  searchh() {
+    this.server.getPlacesSuggestions(this.destination).subscribe((data: any) => {
+      console.log(data)
+      this.addresses = data;
+    })
+  }
+  displayFn(address: any) {
+    if (address) {
+
+      return address.description;
+    }
+  }
+  onSelectPlace(address: any) {
+    console.log(address)
+    if (this.place_ids.length == 0) {
+      this.place_ids.push(address.place_id);
+    } else {
+      if (this.place_ids.includes(address.place_id)) {
+        console.log('found');
+        // this.place_ids.splice(this.place_ids.indexOf(id), 1);
+      } else {
+        console.log('not found');
+        this.place_ids.push(address.place_id);
+      }
+    }
+    console.log(this.place_ids);
+  }
+  y(address: any) {
+    if (this.place_ids.includes(address.place_id)) {
+      console.log('found');
+      this.place_ids.splice(this.place_ids.indexOf(address.place_id), 1);
+    }
   }
   public mapReadyHandler(map: any) {
     console.log(map)
