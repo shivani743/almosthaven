@@ -135,10 +135,9 @@
 																<img class="img-fluid bod-radius-10" alt="100%x280"
 																	src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
 																<div class="card-body">
-																	<h4 class="card-title-travel">Special title
-																		treatment</h4>
-																	<p class="card-text">With supporting text below as
-																		natural.</p>
+																	<h4 class="card-title-travel">Clubs in {{place_id}}
+																		</h4>
+																	<p class="card-text"></p>
 																</div>
 															</div>
 														</div>
@@ -147,10 +146,8 @@
 																<img class="img-fluid bod-radius-10" alt="100%x280"
 																	src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
 																<div class="card-body">
-																	<h4 class="card-title-travel">Special title
-																		treatment</h4>
-																	<p class="card-text">With supporting text below as
-																		natural.</p>
+																	<h4 class="card-title-travel">Cafes in {{place_id}}</h4>
+																	<p class="card-text"></p>
 
 																</div>
 															</div>
@@ -160,10 +157,8 @@
 																<img class="img-fluid bod-radius-10" alt="100%x280"
 																	src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
 																<div class="card-body">
-																	<h4 class="card-title-travel">Special title
-																		treatment</h4>
-																	<p class="card-text">With supporting text below as
-																		natural.</p>
+																	<h4 class="card-title-travel">Monuments in {{place_id}}</h4>
+																	<p class="card-text"></p>
 
 																</div>
 															</div>
@@ -177,10 +172,8 @@
 																<img class="img-fluid bod-radius-10" alt="100%x280"
 																	src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
 																<div class="card-body">
-																	<h4 class="card-title-travel">Special title
-																		treatment</h4>
-																	<p class="card-text">With supporting text below as
-																		natural.</p>
+																	<h4 class="card-title-travel">Spas in {{place_id}}</h4>
+																	<p class="card-text"></p>
 																</div>
 															</div>
 														</div>
@@ -189,10 +182,8 @@
 																<img class="img-fluid bod-radius-10" alt="100%x280"
 																	src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
 																<div class="card-body">
-																	<h4 class="card-title-travel">Special title
-																		treatment</h4>
-																	<p class="card-text">With supporting text below as
-																		natural.</p>
+																	<h4 class="card-title-travel">Fun Spots in {{place_id}}</h4>
+																	<p class="card-text"></p>
 																</div>
 															</div>
 														</div>
@@ -596,7 +587,7 @@
 			<!-- <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div> -->
-			<div class="modal-body">
+			<div style="touch-action: pan-x pan-y;" class="modal-body">
 				<agm-map [zoom]="5" [latitude]="lat" [longitude]="lng" [style.height]="mapHeight" [scrollwheel]="false">
 					<agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng">
 						<agm-info-window [isOpen]="true">
@@ -662,6 +653,7 @@
 	</div>
 	<!-- /.modal-dialog -->
 </div>
+<<<<<<< Updated upstream
 
 
 
@@ -689,3 +681,5 @@
 		</div>
 	</div>
 </div>
+=======
+>>>>>>> Stashed changes

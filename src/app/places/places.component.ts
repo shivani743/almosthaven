@@ -5,6 +5,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, startWith } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ServerService } from '../services/server.service';
 
 declare var google: any;
 
@@ -43,7 +44,13 @@ export class PlacesComponent implements OnInit {
   
 
 
+<<<<<<< Updated upstream
   constructor(private route: ActivatedRoute, scroller: ViewportScroller, private router: Router) {
+=======
+
+
+  constructor(private route: ActivatedRoute, private router: Router, private server: ServerService) {
+>>>>>>> Stashed changes
 
     //     this.route.queryParams.subscribe(params => {
     //       this.data = params['data'];
@@ -69,6 +76,7 @@ export class PlacesComponent implements OnInit {
     this.data = JSON.parse(p)
     console.log(this.data)
     const placesInfo = this.data.placesInfo
+<<<<<<< Updated upstream
 
     this.startDate = this.data.startDate
     this.endDate = this.data.endDate
@@ -83,6 +91,9 @@ export class PlacesComponent implements OnInit {
     console.log(this.dates)
 
 
+=======
+this.getPlaces(placesInfo[0].placeName)
+>>>>>>> Stashed changes
     for (let i = 0; i < placesInfo.length; i++) {
       this.place_id = placesInfo[i].place_id
       const mar = {
@@ -114,6 +125,13 @@ export class PlacesComponent implements OnInit {
   }
   public mapReadyHandler(map: any) {
     console.log(map)
+    map.setOptions({
+      zoomControl: 'true',
+      zoomControlOptions: {
+
+      }
+  });
+
     map.addListener('click', (e: any) => {
       console.log(e)
     });
@@ -194,6 +212,7 @@ export class PlacesComponent implements OnInit {
     }
   }
 
+<<<<<<< Updated upstream
   onSelectPlace(address: any) {
     console.log(address)
     if (this.place_ids.length == 0) {
@@ -215,6 +234,35 @@ export class PlacesComponent implements OnInit {
       this.place_ids.splice(this.place_ids.indexOf(address.place_id), 1);
     }
   }
+=======
+  async getPlaces (placeName:any) {
+    (this.server.getClubs(placeName)).subscribe(
+      (data: any) => {
+        console.log(data)
+
+      });
+
+      (this.server.getCafes(placeName)).subscribe(
+        (data: any) => {
+          console.log(data)
+
+        });
+
+        (this.server.getMonuments(placeName)).subscribe(
+          (data: any) => {
+            console.log(data)
+
+          });
+          (this.server.getSpa(placeName)).subscribe(
+            (data: any) => {
+              console.log(data)
+
+            });
+
+
+  }
+
+>>>>>>> Stashed changes
 }
 
 

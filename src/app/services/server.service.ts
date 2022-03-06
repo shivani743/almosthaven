@@ -65,5 +65,53 @@ firstCall(place_ids:any[]) {
     const req = await this.http.get(url, { headers: headers }).toPromise()
     return req
   }
+   getSpa(placeName: string) {
+    const url = this.BASE_URL + 'textsearch';
+    // const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    const body = {
+      'text': "Spa in " + placeName
+    }
+    return  this.http.post(url, body, { headers: headers })
+
+  }
+   getMonuments(placeName: string) {
+    const url = this.BASE_URL + 'textsearch';
+    // const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    const body = {
+      'text': "Monuments in " + placeName
+    }
+    return  this.http.post(url, body, { headers: headers })
+
+  }
+   getClubs(placeName: string) {
+    const url = this.BASE_URL + 'textsearch';
+    // const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    const body = {
+      'text': "Clubs in " + placeName
+    }
+    return this.http.post(url, body, { headers: headers })
+
+  }
+   getCafes(placeName: string) {
+    const url = this.BASE_URL + 'textsearch';
+    // const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    const body = {
+      'text': "Cafes in " + placeName
+    }
+    return  this.http.post(url, body, { headers: headers })
+
+  }
 
 }
