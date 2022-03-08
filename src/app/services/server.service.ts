@@ -14,7 +14,7 @@ export class ServerService {
 
 
   }
-  private BASE_URL = 'http://3.111.30.217/user/';
+  private BASE_URL = 'http://localhost:3000/user/';
   private sample_photo_id = 'Aap_uEBLF3KN_DIY00w1ORDNCndNVnZbbt5Y5hGrKAK1L4f5n8Ln1Pq7oJBJcSfORwAcGk8u2Zr8kRKBJyZtFLYIQfbBrS37Z0fBN_ueJPjwipezOnx5BEaXl519BTdQ6G1ydEg_wXJYG7lTL1Yo1UJotkButvErzQeaZQfrrIdhdg2seLfM';
   private sampleWidth = 4000;
   private sampleHeight = 1800
@@ -36,6 +36,25 @@ export class ServerService {
     const req = this.http.get(url, { headers: headers })
     return req
   }
+  getPlacesdets(place_id: any) {
+    const url = this.BASE_URL + 'placedetails/' + place_id;
+    // const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    const req = this.http.get(url, { headers: headers })
+    return req
+  }
+  TripById(place_id: any) {
+    const url = this.BASE_URL + 'tripbyid/' + place_id;
+    // const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    const req = this.http.get(url, { headers: headers })
+    return req
+  }
+
 firstCall(place_ids:any[]) {
   const url = this.BASE_URL + 'getplan';
   // const token = localStorage.getItem('token')
@@ -46,25 +65,54 @@ firstCall(place_ids:any[]) {
   return req
 
 }
-  postPlan(payload: any) {
+  postPlan(ip:any, payload: any) {
     // const token = localStorage.getItem('token')
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
 
     })
     // Authorization: `Bearer ` + token,
-    return this.http.post(this.BASE_URL + 'getPlan', JSON.stringify(payload), { headers: headers })
+    return this.http.post(this.BASE_URL + 'getPlan/'+ip  , JSON.stringify(payload), { headers: headers })
+  }
+   postToTrip(id:any, obj: any) {
+    // const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+
+    })
+    // Authorization: `Bearer ` + token,
+    return this.http.post(this.BASE_URL + 'tripupdate/'+id  , JSON.stringify(obj), { headers: headers })
   }
 
-  async getPlaces(placeName: string) {
+  getPlaces(placeName: string) {
     const url = this.BASE_URL + 'suggestplace/' + placeName;
     // const token = localStorage.getItem('token')
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     })
-    const req = await this.http.get(url, { headers: headers }).toPromise()
-    return req
+    return this.http.get(url, { headers: headers })
+
   }
+   getUserByIp(ip: any) {
+    const url = this.BASE_URL + 'userbyip/' + ip;
+    // const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    return this.http.get(url, { headers: headers })
+
+  }
+
+   getPlaceById(id: any) {
+    const url = this.BASE_URL + 'tripbyid/' + id;
+    // const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+    return this.http.get(url, { headers: headers })
+
+  }
+
    getSpa(placeName: string) {
     const url = this.BASE_URL + 'textsearch';
     // const token = localStorage.getItem('token')

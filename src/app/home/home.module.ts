@@ -15,7 +15,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { AgmCoreModule } from '@agm/core';
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   imports: [
@@ -36,6 +36,7 @@ import { AgmCoreModule } from '@agm/core';
     MatSelectModule,
     MatInputModule,
     MatChipsModule,
+    MatCardModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     })
@@ -48,5 +49,5 @@ import { AgmCoreModule } from '@agm/core';
 
 })
 export class HomeModule {
-  
+
  }

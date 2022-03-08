@@ -16,11 +16,32 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FlightComponent } from './flight/flight.component';
 
+import { MatCardModule } from '@angular/material/card';
+import { FlightComponent } from './flight/flight.component';
+import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, PB_DIRECTION, POSITION, SPINNER } from 'ngx-ui-loader';
+const message = ['Plan your trips with YippieGo','Get the best experience with Yippiego','YippieGo is the best travel app'];
+const configLoading: NgxUiLoaderConfig = {
+
+  fgsSize: 50,
+  bgsSize: 40,
+  bgsType: SPINNER.rectangleBounceParty,
+  fgsType: SPINNER.rectangleBounceParty, // foreground spinner type
+  pbDirection: PB_DIRECTION.leftToRight, // progress bar direction
+  pbThickness: 5, // progress bar thickness
+
+  text: message[Math.floor(Math.random()*message.length)],
+
+
+  // logoUrl: "../assets/images/logo/logo-1.png",
+
+
+
+};
 @NgModule({
   imports: [
     BrowserModule,
+    NgxUiLoaderModule,
     CoreModule.forRoot(),
     AppRoutingModule,
     HomeModule,
@@ -31,6 +52,12 @@ import { FlightComponent } from './flight/flight.component';
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
+    MatCardModule,
+    NgxUiLoaderModule.forRoot(configLoading),
+
+    NgxUiLoaderRouterModule,
+
+    NgxUiLoaderHttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     })
@@ -53,6 +80,7 @@ import { FlightComponent } from './flight/flight.component';
     useClass: InterceptorService,
     multi: true,
   },
+
     LocalStorageService],
   bootstrap: [AppComponent]
 })

@@ -6,94 +6,70 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, startWith } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ServerService } from '../services/server.service';
-
 declare var google: any;
-
-
 @Component({
   selector: 'app-places',
   templateUrl: './places.component.html',
   styleUrls: ['./places.component.scss']
 })
 export class PlacesComponent implements OnInit {
-  // @Input() placeName: string = 'Delhi';
-  // @Input() date: string = '2022-02-02';
-  campaignOne!: FormGroup;
-  campaignTwo: FormGroup;
+
+
   data: any;
+  hide: boolean = false;
   public lat: any;
+  placeName: any;
   public lng: any;
   public zoom = '';
   public mapHeight = '';
   currentCenter = { lat: null, lng: null };
   place_id: any;
   mapClickListener: any;
-  // values = [{value: ""}];
+trip:any;
   values: any = [];
   destination = "";
   Addplaces: any = [];
+  newArr:any[] =[];
+  best: any[] = [];
   range: any;
   startDate: any;
   endDate: any;
   datasource_dates: any;
   dates: any
-  server: any;
+trip_id:any;
   addresses: any;
   place_ids: any = [];
   scroller: any;
-  
+  constructor(private route: ActivatedRoute, scroller: ViewportScroller, private router: Router, private server: ServerService) {
+    this.route.params.subscribe(params => {
+
+      this.trip_id = params['id']
+      console.log(this.trip_id)
+    });
 
 
-<<<<<<< Updated upstream
-  constructor(private route: ActivatedRoute, scroller: ViewportScroller, private router: Router) {
-=======
-
-
-  constructor(private route: ActivatedRoute, private router: Router, private server: ServerService) {
->>>>>>> Stashed changes
-
-    //     this.route.queryParams.subscribe(params => {
-    //       this.data = params['data'];
-    // console.log(this.data)
-    //     })
     const today = new Date();
     const month = today.getMonth();
     const year = today.getFullYear();
 
-    this.campaignOne = new FormGroup({
-      start: new FormControl(new Date(year, month, 13)),
-      end: new FormControl(new Date(year, month, 16)),
-    });
-    this.campaignTwo = new FormGroup({
-      start: new FormControl(new Date(year, month, 15)),
-      end: new FormControl(new Date(year, month, 19)),
-    });
   }
-
   markers: any[] = [];
   ngOnInit(): void {
+
     const p: any = localStorage.getItem('plan')
     this.data = JSON.parse(p)
-    console.log(this.data)
-    const placesInfo = this.data.placesInfo
-<<<<<<< Updated upstream
 
+    this.placeName = this.data.placesInfo[0].place_name;
+    const placesInfo = this.data.placesInfo
     this.startDate = this.data.startDate
     this.endDate = this.data.endDate
-    console.log(this.startDate);
 
     var date1 = formatDate(new Date(this.startDate), 'yyyy-MM-dd', 'en_US')
     var date2 = formatDate(new Date(this.endDate), 'yyyy-MM-dd', 'en_US')
-    // var date_range = date1 + "-" + date2;
-    // alert(date_range)
 
     this.dates = this.dateRange(date1, date2);
-    console.log(this.dates)
 
-
-=======
 this.getPlaces(placesInfo[0].placeName)
->>>>>>> Stashed changes
     for (let i = 0; i < placesInfo.length; i++) {
       this.place_id = placesInfo[i].place_id
       const mar = {
@@ -105,77 +81,50 @@ this.getPlaces(placesInfo[0].placeName)
       }
       this.markers.push(mar)
     }
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map((value: string) => this._filter(value)),
-    );
-
+    this.server.TripById(this.trip_id).subscribe((po:any) => {
+this.trip = po
+this.best = this.trip.tripObj.placesInfo[0].bestPlaces
+if(this.trip.tripObj.itinerary.length > 0){
+  this.newArr = po.tripObj.itinerary
+  console.log(this.newArr)
+}
+     else {
+       this.newArr =[]
+       console.log(this.newArr)
+     }
+    })
   }
-
   goDown1() {
     this.scroller.scrollToAnchor("targetRed");
   }
-
-
   change() {
     this.searchh()
   }
-  onSelectionChanged(e: any) {
-    console.log(e)
-  }
   public mapReadyHandler(map: any) {
-    console.log(map)
+
     map.setOptions({
       zoomControl: 'true',
       zoomControlOptions: {
-
       }
   });
-
     map.addListener('click', (e: any) => {
-      console.log(e)
+
     });
   }
-
-  //* note section start here*//
   removevalue(i: number) {
     this.values.splice(i, 1);
   }
-
   addvalue() {
     this.values.push({ value: "" });
   }
-  //* note section end here*//
-
-  //* Add Places section start here*//
-  // removePlacesValue(i: number) {
-  //   this.Addplaces.splice(i, 1);
-  // }
-
-  // addPlacesValue() {
-  //   this.Addplaces.push({ value: "" });
-  // }
-  //* Add Places section end here*//
-
-  //* Add Places dropdown section here*//
-
-  myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]> | undefined;
-
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
-  }
-
-
   dateRange(startDate: any, endDate: any, steps = 1) {
     const dateArray = [];
     let currentDate = new Date(startDate);
     var converted_dates;
     var date;
+    var day;
     var month;
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     while (currentDate <= new Date(endDate)) {
       converted_dates = formatDate(new Date(currentDate), 'dd-MMM', 'en_US')
       dateArray.push(converted_dates);
@@ -185,84 +134,86 @@ this.getPlaces(placesInfo[0].placeName)
     for (var i in dateArray) {
       date = dateArray[i].split("-")[0]
       month = dateArray[i].split("-")[1].toString();
-      dateArray1.push({ date, month });
+      day = days[new Date(dateArray[i]).getDay()]
+      dateArray1.push({ date, month, day });
     }
     return dateArray1;
   }
-
-
-
   Navigate1() {
-    this.router.navigateByUrl("exploreplaces");
+    this.router.navigateByUrl(`exploreplaces/${this.trip_id}`);
   }
-
-
-
-
   searchh() {
     this.server.getPlacesSuggestions(this.destination).subscribe((data: any) => {
-      console.log(data)
+
       this.addresses = data;
     })
   }
   displayFn(address: any) {
     if (address) {
-
       return address.description;
     }
   }
+  onSelectPlace(address: any, index:any) {
+console.log(address,index )
+this.destination = address.place_id
+this.server.getPlacesdets(this.destination).subscribe((data: any) => {
+console.log(data)
+  const obj = {
+    place_name: data?.name,
+    place_photo: data?.photos?.[0],
+    address: data?.formatted_address,
+    types: data?.types,
+    website: data?.website,
+    summary: data?.summary,
+    ind: index,
+  }
 
-<<<<<<< Updated upstream
-  onSelectPlace(address: any) {
-    console.log(address)
-    if (this.place_ids.length == 0) {
-      this.place_ids.push(address.place_id);
-    } else {
-      if (this.place_ids.includes(address.place_id)) {
-        console.log('found');
-        // this.place_ids.splice(this.place_ids.indexOf(id), 1);
-      } else {
-        console.log('not found');
-        this.place_ids.push(address.place_id);
-      }
-    }
-    console.log(this.place_ids);
+this.newArr.push(obj)
+console.log(this.newArr)
+this.trip.tripObj['itinerary'] = this.newArr
+console.log(this.trip)
+this.server.postToTrip(this.trip_id, this.trip.tripObj).subscribe((dataa: any) => {
+  console.log(dataa)
+})
+
+
+})
+
   }
   y(address: any) {
     if (this.place_ids.includes(address.place_id)) {
-      console.log('found');
+
       this.place_ids.splice(this.place_ids.indexOf(address.place_id), 1);
     }
   }
-=======
   async getPlaces (placeName:any) {
-    (this.server.getClubs(placeName)).subscribe(
-      (data: any) => {
-        console.log(data)
-
-      });
-
-      (this.server.getCafes(placeName)).subscribe(
-        (data: any) => {
-          console.log(data)
-
-        });
-
         (this.server.getMonuments(placeName)).subscribe(
           (data: any) => {
-            console.log(data)
 
           });
-          (this.server.getSpa(placeName)).subscribe(
-            (data: any) => {
-              console.log(data)
-
-            });
-
-
   }
+  onClick() {
+    if(this.hide) {
+      this.hide = false;
+    }
+    else {
+      this.hide = true;
+    }
+  }
+  addPlace(index: any) {
 
->>>>>>> Stashed changes
+this.server.getPlacesdets(this.destination).subscribe((data: any) => {
+
+  const obj = {
+    place_name: data?.name,
+    place_photo: data?.photos[0],
+    address: data?.formatted_address,
+    types: data?.types,
+    website: data?.website,
+    summary: data?.summary,
+    ind: index,
+  }
+this.newArr.push(obj)
+})
+  }
 }
-
-

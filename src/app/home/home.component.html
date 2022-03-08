@@ -110,7 +110,28 @@
     </div>
 </div>
 <!-- / Main-Slider-1 Ends -->
+<div style="padding-left: 25px; padding-top: 25px;">
+  <h1>Your recent trips</h1>
+<div class="row">
+<div *ngFor="let place of allPlaces" class="col-md-3">
+  <mat-card (click)="goto(place.id)">
+    <mat-card-header>
+      <mat-card-title>{{place.tripName}}</mat-card-title>
+      <mat-card-subtitle>{{place.startDate.split('T')[0]}} - {{place.endDate.split('T')[0]}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{place.placesInfo[0].photos[0]}}" alt="">
+    <mat-card-content>
+      <p>Trip was planned for {{place.numberOfDays}} days</p>
+    </mat-card-content>
 
+  </mat-card>
+</div>
+
+
+
+</div>
+
+</div>
 <section class="pt-50 agency">
     <div class="container">
         <div class="title-wrap-2 text-center">
@@ -251,7 +272,7 @@
                             </div>
                             <div class="flex-wrap">
                                 <div class="flex-caption middle info transition">
-                                   
+
                                 </div>
                             </div>
                             <a href="#" class="title-1 rotated-text"> <span> SHARE THIS PLACE </span> </a>

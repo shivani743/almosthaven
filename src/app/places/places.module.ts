@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker'
 
-
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -33,6 +33,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
     MatIconModule,
     MatCheckboxModule,
     MatDatepickerModule,
+    MatCardModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
     })

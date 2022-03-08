@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   destination: any;
   addresses: any;
   place_ids: any = [];
+  allPlaces: any[] = [];
   startDate: any;
   endDate: any;
   resp: any;
@@ -60,6 +61,20 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
     // this.searchh()
+    const ip = localStorage.getItem('ip')
+    this.server.getUserByIp(ip).subscribe((data: any) => {
+const tripzy = data.trips;
+console.log(tripzy)
+for (let index = 0; index < tripzy.length; index++) {
+  const element = tripzy[index];
+
+  this.server.getPlaceById(element).subscribe((data: any) => {
+    data.tripObj['id'] = element
+this.allPlaces.push(data.tripObj)
+  console.log(this.allPlaces)
+})
+    }
+  })
     console.log(this.campaignOne)
 
   }
@@ -90,7 +105,9 @@ export class HomeComponent implements OnInit {
       return address.description;
     }
   }
-
+goto(id:any) {
+this.router.navigate([`/places/${id}`]);
+}
   onSelectPlace(address: any) {
     console.log(address)
     if (this.place_ids.length == 0) {
@@ -122,11 +139,11 @@ export class HomeComponent implements OnInit {
         "endDate": this.endDate,
         "place_ids": this.place_ids
       }
-      this.server.postPlan(payload).subscribe((res) => {
+      this.server.postPlan(localStorage.getItem('ip'), payload).subscribe((res) => {
         this.resp = res;
         console.log(res)
-        localStorage.setItem('plan', JSON.stringify(this.resp));
-        this.router.navigate([`/places`]);
+        localStorage.setItem('plan', JSON.stringify(this.resp.tripObj));
+        this.router.navigate([`/places/${this.resp._id}`]);
       }),
         (err: any) => {
           console.log(err)

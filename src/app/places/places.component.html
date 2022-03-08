@@ -135,7 +135,7 @@
 																<img class="img-fluid bod-radius-10" alt="100%x280"
 																	src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
 																<div class="card-body">
-																	<h4 class="card-title-travel">Clubs in {{place_id}}
+																	<h4 class="card-title-travel">Clubs in {{placeName}}
 																		</h4>
 																	<p class="card-text"></p>
 																</div>
@@ -146,7 +146,7 @@
 																<img class="img-fluid bod-radius-10" alt="100%x280"
 																	src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
 																<div class="card-body">
-																	<h4 class="card-title-travel">Cafes in {{place_id}}</h4>
+																	<h4 class="card-title-travel">Cafes in {{placeName}}</h4>
 																	<p class="card-text"></p>
 
 																</div>
@@ -157,7 +157,7 @@
 																<img class="img-fluid bod-radius-10" alt="100%x280"
 																	src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
 																<div class="card-body">
-																	<h4 class="card-title-travel">Monuments in {{place_id}}</h4>
+																	<h4 class="card-title-travel">Monuments in {{placeName}}</h4>
 																	<p class="card-text"></p>
 
 																</div>
@@ -172,7 +172,7 @@
 																<img class="img-fluid bod-radius-10" alt="100%x280"
 																	src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
 																<div class="card-body">
-																	<h4 class="card-title-travel">Spas in {{place_id}}</h4>
+																	<h4 class="card-title-travel">Spas in {{placeName}}</h4>
 																	<p class="card-text"></p>
 																</div>
 															</div>
@@ -182,24 +182,12 @@
 																<img class="img-fluid bod-radius-10" alt="100%x280"
 																	src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
 																<div class="card-body">
-																	<h4 class="card-title-travel">Fun Spots in {{place_id}}</h4>
+																	<h4 class="card-title-travel">Fun Spots in {{placeName}}</h4>
 																	<p class="card-text"></p>
 																</div>
 															</div>
 														</div>
-														<div class="col-md-4 col-sm-4 col-xs-6 mb-3 left-right-10">
-															<div class="card">
-																<img class="img-fluid bod-radius-10" alt="100%x280"
-																	src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
-																<div class="card-body">
-																	<h4 class="card-title-travel">Special title
-																		treatment</h4>
-																	<p class="card-text">With supporting text below as
-																		natural.</p>
 
-																</div>
-															</div>
-														</div>
 
 													</div>
 												</div>
@@ -286,7 +274,7 @@
 					</div>
 					<div class="border-top-bottom-15" id="2">
 						<div class="container">
-							<div class="ptb-30">
+							<div *ngFor="let date of dates;let i = index;" class="ptb-30">
 								<div class="row page-section ">
 									<div class="col-lg-9 col-md-6 col-sm-3 col-xs-12">
 										<h4 class="itinerary-text">Itinerary</h4>
@@ -294,13 +282,13 @@
 									<div class="col-lg-3 col-md-6 col-sm-9 col-xs-12 padding-0">
 										<button type="submit" class="secondary-btn-small"><i class="fa fa-calendar"
 												aria-hidden="true"></i>
-											&nbsp; 2/1 - 2/2</button>
+											&nbsp; {{date.date}} {{date.month}}</button>
 
 									</div>
 								</div>
 								<div class="page-section row pt-10">
 									<div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
-										<h5><strong>Tuesday, February 1st</strong></h5>
+										<h5><strong>{{date.date}}<sup>th</sup> {{date.month}}, {{date.day}} </strong></h5>
 										<!-- <h5>Sub Heading</h5> -->
 									</div>
 									<div class="col-md-4 col-sm-4 col-xs-6 padding-0" align="right"></div>
@@ -308,36 +296,27 @@
 								<div class="row  pt-10">
 
 									<div class="col-md-12 col-sm-12 col-xs-12">
-										<div class="col-md-12 col-sm-12 col-xs-12 border-left-web">
-											<div *ngFor="let value of Addplaces; let i = index">
-												<div class="row ptb-30">
-													<div class="col-md-8 col-xs-8 col-sm-8">
-														<input type="text" id="exampleForm2" class="form-control"
-															value="" placeholder="Pune">
-														<br>
-														<textarea class="form-control rounded-0"
-															id="exampleFormControlTextarea2"
-															rows="3">From the web: Jejuri is a city and a municipal council in Pune district in the Indian state of Maharashtra. It is famous for the main temple of Lord Khandoba. It is a famous temple town being the family deity of many houses in Maharashtra and Karnataka.</textarea>
-													</div>
-													<div class="col-md-3 col-xs-3 col-sm-3 padding-0">
-														<img src="https://itin-dev.sfo2.cdn.digitaloceanspaces.com/freeImageSmall/HnlqskQcEspfQtVs3kDlhzQp1KbtU8rA"
-															class="explore-img">
-													</div>
-													<div class="col-md-1 col-sm-1 col-xs-1">
-														<!-- <button class="btn btn-outline-danger"
-															(click)="removePlacesValue(i)"><i class="fa fa-trash"
-																aria-hidden="true"></i>
-														</button> -->
-													</div>
-												</div>
-											</div>
+										<div *ngFor="let e of newArr; let j = index;" class="col-md-12 col-sm-12 col-xs-12 border-left-web">
+<div *ngIf="e.ind == i">
+  <mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>{{e?.place_name}}</mat-card-title>
+      <mat-card-subtitle>{{e?.address}}</mat-card-subtitle>
+      <img mat-card-sm-image [src]="e?.place_photo" >
+    </mat-card-title-group>
+    <mat-card-content>
+      {{e?.summary}}
+
+    </mat-card-content>
+  </mat-card>
+</div>
 										</div>
 
 										<div class="page-section row pt-10">
-											<div class="col-md-10 col-sm-8 col-xs-8">
+											<div  class="col-md-10 col-sm-8 col-xs-8">
 												<mat-form-field class="example-full-width" appearance="fill">
 													<input matInput type="text" name="destination" [(ngModel)]="destination" (ngModelChange)="change()" [matAutocomplete]="auto" placeholder="Where to? eg: London, Paris">
-													<mat-autocomplete [displayWith]="displayFn" (optionSelected)='onSelectPlace($event.option.value)'  #auto="matAutocomplete" class="address-list">
+													<mat-autocomplete [displayWith]="displayFn" (optionSelected)='onSelectPlace($event.option.value, i)'  #auto="matAutocomplete" class="address-list">
 														<mat-option  *ngFor="let address of addresses" [value]="address" >
 															{{ address.description }}
 														</mat-option>
@@ -345,7 +324,10 @@
 												</mat-form-field>
 											</div>
 											<div class="col-md-2 col-sm-4 col-xs-4 padding-0">
-												<button class="btn-web" mat-raised-button color="primary" (click)="addvalue()">Note</button>
+												<button class="btn-web" mat-raised-button color="primary" (click)="addPlace(i)">Add Place</button>
+											</div>
+                      <div class="col-md-2 col-sm-4 col-xs-4 padding-0">
+												<button class="btn-web" mat-raised-button color="secondary" (click)="addvalue()">Add Note</button>
 											</div>
 										</div>
 
@@ -369,9 +351,39 @@
 										</div>
 
 										<div class="page-section mtt-5">
-											<p class="text-dark"><i class="fa fa-arrow-circle-o-right"
+											<p (click)="onClick()" class="text-dark"><i class="fa fa-arrow-circle-o-right"
 													aria-hidden="true"></i>&nbsp;&nbsp;
 												Recommonded Places</p>
+            <div *ngIf="hide" class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6 padding-1">
+                <mat-card class="example-card">
+                  <mat-card-title-group>
+                    <mat-card-title>{{best[0].place_name}}</mat-card-title>
+                    <mat-card-subtitle>{{best[0].formatted_address}}</mat-card-subtitle>
+                    <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+                  </mat-card-title-group>
+                  <mat-card-content>
+                    text
+
+                  </mat-card-content>
+                </mat-card>
+                  </div>
+
+                  <div class="col-md-6 col-sm-6 col-xs-6 padding-1">
+                    <mat-card class="example-card">
+                      <mat-card-title-group>
+                        <mat-card-title>Shiba Inu</mat-card-title>
+                        <mat-card-subtitle>Medium</mat-card-subtitle>
+                        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+                      </mat-card-title-group>
+                      <mat-card-content>
+                        text
+
+                      </mat-card-content>
+                    </mat-card>
+                      </div>
+            </div>
+
 										</div>
 									</div>
 								</div>
@@ -505,7 +517,7 @@
 								</agm-info-window>
 							</agm-marker>
 						</agm-map>
-						
+
 					</section>
 				</div>
 			</div>
@@ -653,7 +665,6 @@
 	</div>
 	<!-- /.modal-dialog -->
 </div>
-<<<<<<< Updated upstream
 
 
 
@@ -681,5 +692,3 @@
 		</div>
 	</div>
 </div>
-=======
->>>>>>> Stashed changes

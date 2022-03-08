@@ -3,21 +3,23 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Inspi</title>
+  <title>YippieGo</title>
   <!-- Favicon -->
   <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png">
   <link rel="shortcut icon" href="assets/ico/favicon.ico">
-  <link href="assets/css/plugin/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet"  href="/assets/css/plugin/font-awesome.min.css">
   <!-- CSS Global -->
-  <link rel='stylesheet' href='assets/css/plugin/bootstrap.min.css'>
-  <link rel='stylesheet' href='assets/css/plugin/bootstrap-select.min.css'>
-  <link rel='stylesheet' href='assets/css/plugin/datepicker.css'>
-  <link rel='stylesheet' href='assets/css/plugin/owl.carousel.min.css'>
-  <link rel='stylesheet' href='assets/css/plugin/animate.css'>
-  <link href="assets/css/plugin/magnify.css" rel="stylesheet" type="text/css">
+  <link rel='stylesheet' href='/assets/css/plugin/bootstrap.min.css'>
+  <link rel='stylesheet' href='/assets/css/plugin/bootstrap-select.min.css'>
+  <link rel='stylesheet' href='/assets/css/plugin/datepicker.css'>
+  <link rel='stylesheet' href='/assets/css/plugin/owl.carousel.min.css'>
+  <link rel='stylesheet' href='/assets/css/plugin/animate.css'>
+  <link rel="stylesheet" href="/assets/css/plugin/magnify.css" >
 
   <!-- Custom CSS -->
-  <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/assets/css/style.css" >
+
+
   <!-- Color CSS -->
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -131,7 +133,15 @@
     });
   }).scroll();
 
-  
+
 </script>
+<script type="application/javascript">
+  function getIP(json) {
+   console.log(json)
+   localStorage.setItem('ip', json.ip)
+  }
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
 </html>

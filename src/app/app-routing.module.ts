@@ -17,15 +17,19 @@ const routes: Routes = [
 
   },
   {
-    path: 'places',
+    path: 'places/:id',
     loadChildren: () => import('./places/places.module').then(m => m.PlacesModule)
 
   },
   {
-    path: 'exploreplaces',
+    path: 'exploreplaces/:id',
     loadChildren: () => import('./exploreplaces/exploreplaces.module').then(m => m.PlacesModule)
 
   },
+  {
+    path: '**',
+    redirectTo: 'home',
+  }
 ];
 const routerOptions: ExtraOptions = {
   anchorScrolling: "enabled"
