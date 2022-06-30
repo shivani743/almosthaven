@@ -1,0 +1,30 @@
+import { Response } from 'express';
+import { NewUser } from '../../models/dto/newUser.dto';
+import { UserService } from './user.service';
+export declare class UserController {
+    private readonly userService;
+    constructor(userService: UserService);
+    create(user: NewUser): Promise<import("../../models/user.model").User>;
+    getE(fbid: any): Promise<any>;
+    createGoogle(user: NewUser): Promise<import("../../models/user.model").User>;
+    checkfb(fbid: any, res: Response): Promise<import("../../models/user.model").User>;
+    get(req: any, res: Response): Promise<Response<any, Record<string, any>>>;
+    findbyemail(req: any, email: string, res: Response): Promise<Response<any, Record<string, any>>>;
+    findbyemai(req: any, email: any, res: Response): Promise<Response<any, Record<string, any>>>;
+    findfb(req: any, fbid: any, res: Response): Promise<Response<any, Record<string, any>>>;
+    activate(req: any, res: Response): Promise<void>;
+    getAll(res: Response): Promise<Response<any, Record<string, any>>>;
+    update(req: any, user: {}): Promise<import("../../models/user.model").User>;
+    getUserById(id: string, res: Response): Promise<Response<any, Record<string, any>>>;
+    getQueryAuto(query: any, res: Response): Promise<Response<any, Record<string, any>>>;
+    getPlaceDetails(query: string, res: Response): Promise<Response<any, Record<string, any>>>;
+    getPlan(req: Request, ip: any, query: any, res: Response): Promise<Response<any, Record<string, any>>>;
+    newtrip(req: Request, query: any, res: Response): Promise<Response<any, Record<string, any>>>;
+    upd(req: Request, id: any, query: any, res: Response): Promise<Response<any, Record<string, any>>>;
+    photos(query: string, res: Response): Promise<Response<any, Record<string, any>>>;
+    Ipuser(query: string, res: Response): Promise<Response<any, Record<string, any>>>;
+    tripbyid(query: string, res: Response): Promise<Response<any, Record<string, any>>>;
+    GetText(req: Request, query: any, res: Response): Promise<Response<any, Record<string, any>>>;
+    getNearby(req: Request, id: any, res: Response): Promise<Response<any, Record<string, any>>>;
+    remove(req: any): Promise<void>;
+}

@@ -1,0 +1,25 @@
+ [{ "id":"0",
+  "userId": "1",
+  "username": "saswat",
+  "messages": [{
+    "id":"0",
+    "text":"hello",
+    "type":"recieved",
+    "timestamp":""
+  },
+  {
+    "id":"0",
+    "text":"hello",
+    "type":"recieved",
+    "timestamp":""
+  },
+  {
+    "id":"0",
+    "text":"hello",
+    "type":"recieved",
+    "timestamp":""
+  }
+]
+}
+
+]

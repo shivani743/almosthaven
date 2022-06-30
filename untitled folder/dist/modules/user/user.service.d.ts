@@ -1,0 +1,52 @@
+/// <reference types="wikijs" />
+import { Model } from 'mongoose';
+import { NewUser } from '../../models/dto/newUser.dto';
+import { User } from '../../models/user.model';
+import { Trip } from 'src/models/trip.model';
+export declare class UserService {
+    private readonly userModel;
+    private readonly tripModel;
+    private readonly userDuplicateModel;
+    constructor(userModel: Model<User>, tripModel: Model<Trip>, userDuplicateModel: Model<User>);
+    mainkeywordarray: string[];
+    nightlifekeywordarray: string[];
+    foodkeywordarray: string[];
+    findUserById(uid: string): Promise<User>;
+    findemailbyfbid(id: string): Promise<any>;
+    create(user: NewUser): Promise<User>;
+    createUserIp(user: NewUser): Promise<User>;
+    createGoogle(user: NewUser): Promise<User>;
+    activateUser(uid: string, activationToken: string): Promise<User>;
+    grantAccess(uid: string, authToken: string): Promise<{
+        user: User;
+        authToken: string;
+    }>;
+    revokeAccess(uid: string, authToken: string): Promise<User>;
+    revokeAccessAll(uid: string): Promise<User>;
+    queryAutoComplete(query: string): Promise<any[]>;
+    textSearch(query: string): Promise<any[]>;
+    getphotsFromPlaceId(placeId: string): Promise<any[]>;
+    getPlaceDetails(place_id: string): Promise<any>;
+    getNearbyPlaces(queryText: any): Promise<any[]>;
+    postToTrip(id: any, obj: any): Promise<Trip>;
+    getPlan(ip: any, query: any): Promise<Trip>;
+    getWiki(name: any): Promise<import("wikijs").Page>;
+    photosArray(photoarray: any): any[];
+    nearbyHotels(query: any): Promise<void>;
+    individualDays(days: any, places: any): number;
+    divvy(number: any, parts: any): number[];
+    newTrip(tripObj: any): Promise<Trip>;
+    findById(uid: string): Promise<User>;
+    checkFb(fbid: string): Promise<true | User>;
+    findByEmail(email: any): Promise<User>;
+    findByIp(ip: any): Promise<User>;
+    findTripById(id: any): Promise<Trip>;
+    findByFbid(fbid: string): Promise<User>;
+    findByEmailObject(email: any): Promise<User>;
+    findByAuthCredentials(uid: string, authToken: string): Promise<User>;
+    findAll(): Promise<User[]>;
+    updateById(uid: string, user: any): Promise<User>;
+    updateTripById(uid: string, user: any): Promise<User>;
+    removeById(uid: string): Promise<User[]>;
+    upgradeToEnterprise(uid: string): Promise<User>;
+}
